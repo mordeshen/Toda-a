@@ -1,0 +1,3778 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ניצחון התודעה — דוקטרינה אסטרטגית · לציפי חוטובלי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@200;300;400;500;700;900&family=David+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0B1117;
+    --ink-2: #0F1620;
+    --surface: #131C26;
+    --surface-2: #1A2533;
+    --surface-3: #202B3A;
+    --border: #25303D;
+    --border-2: #2E3A48;
+    --text: #E8DFD0;
+    --text-dim: #A8A091;
+    --text-muted: #6B6558;
+    --gold: #C9A961;
+    --gold-dim: #8B7740;
+    --gold-bright: #E5C175;
+    --crimson: #B8443B;
+    --crimson-dim: #7E2A26;
+    --steel: #5C7280;
+    --emerald: #6B9080;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--text);
+    font-family: 'Heebo', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    direction: rtl;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse at top, rgba(201,169,97,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(184,68,59,0.03) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  ::selection { background: var(--gold); color: var(--ink); }
+
+  /* ==================== TYPOGRAPHY ==================== */
+
+  .display { font-family: 'Frank Ruhl Libre', serif; font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; }
+  .serif { font-family: 'Frank Ruhl Libre', serif; }
+
+  /* ==================== LAYOUT ==================== */
+
+  .container { max-width: 980px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+  /* ==================== HERO ==================== */
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 32px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(135deg, transparent 49.5%, rgba(201,169,97,0.06) 50%, transparent 50.5%);
+    background-size: 60px 60px;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .hero-stamp {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 60px;
+    color: var(--text-dim);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .stamp-line { flex: 1; height: 1px; background: var(--border); max-width: 80px; }
+  .stamp-mark { color: var(--gold); font-family: 'David Libre', serif; font-weight: 700; }
+
+  .version-tag {
+    color: var(--gold);
+    font-family: 'David Libre', serif;
+    font-weight: 700;
+    background: rgba(201,169,97,0.12);
+    border: 1px solid var(--gold-dim);
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    margin-right: 8px;
+  }
+
+  .hero-eyebrow {
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(2.8rem, 7.5vw, 5.4rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 32px;
+  }
+
+  .hero h1 .alt { font-style: italic; font-weight: 400; color: var(--gold); }
+
+  .hero-sub {
+    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+    color: var(--text-dim);
+    max-width: 620px;
+    line-height: 1.55;
+    font-weight: 300;
+    margin-bottom: 60px;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 28px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+    max-width: 720px;
+  }
+
+  .hero-meta-item { display: flex; flex-direction: column; gap: 6px; }
+
+  .hero-meta-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .hero-meta-value {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.05rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ==================== TOC ==================== */
+
+  .toc { padding: 100px 32px; border-bottom: 1px solid var(--border); background: var(--ink-2); }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    max-width: 980px;
+    margin: 40px auto 0;
+  }
+
+  .toc-item {
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .toc-item:nth-child(odd) { padding-left: 32px; border-left: 1px solid var(--border); }
+  .toc-item:nth-child(even) { padding-right: 32px; }
+  .toc-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+
+  .toc-item:hover .toc-title { color: var(--gold); }
+  .toc-item.toc-new { background: linear-gradient(90deg, rgba(201,169,97,0.06), transparent); }
+  .toc-item.toc-new::after { content: 'חדש'; color: var(--gold); font-size: 0.65rem; letter-spacing: 0.2em; font-family: 'David Libre', serif; font-weight: 700; margin-right: auto; padding: 2px 8px; border: 1px solid var(--gold-dim); border-radius: 2px; }
+
+  .toc-num {
+    font-family: 'David Libre', serif;
+    color: var(--gold);
+    font-size: 0.95rem;
+    font-weight: 500;
+    min-width: 42px;
+  }
+
+  .toc-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.12rem;
+    color: var(--text);
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+
+  /* ==================== SECTIONS ==================== */
+
+  section.body-section {
+    padding: 110px 0 90px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-header {
+    margin-bottom: 70px;
+    max-width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 32px;
+  }
+
+  .section-num {
+    font-family: 'David Libre', serif;
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .section-num::after {
+    content: '';
+    flex: 0 0 60px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  .section-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .section-lede {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-style: italic;
+    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+    color: var(--text-dim);
+    line-height: 1.55;
+    font-weight: 400;
+    max-width: 620px;
+  }
+
+  /* ==================== PROSE ==================== */
+
+  .prose {
+    font-size: 1.06rem;
+    line-height: 1.8;
+    color: var(--text);
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .prose p { margin-bottom: 1.4em; font-weight: 300; }
+  .prose strong { font-weight: 600; color: var(--gold); }
+  .prose em { font-family: 'Frank Ruhl Libre', serif; font-style: italic; color: var(--text-dim); }
+
+  /* ==================== TRUTHS ==================== */
+
+  .truths {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .truth {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 36px;
+    padding: 38px 0;
+    border-top: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .truth:last-child { border-bottom: 1px solid var(--border); }
+
+  .truth-num {
+    font-family: 'David Libre', serif;
+    font-size: 2.4rem;
+    color: var(--gold);
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .truth-content h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.45rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+
+  .truth-content p {
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ==================== PULL QUOTE ==================== */
+
+  .pullquote {
+    max-width: 820px;
+    margin: 70px auto;
+    padding: 0 60px;
+    position: relative;
+    text-align: center;
+  }
+
+  .pullquote::before {
+    content: '"';
+    position: absolute;
+    top: -40px;
+    right: 50%;
+    transform: translateX(50%);
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 6rem;
+    color: var(--gold);
+    opacity: 0.4;
+    line-height: 1;
+  }
+
+  .pullquote-text {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .pullquote-text strong {
+    font-style: normal;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  /* ==================== SHIFTS ==================== */
+
+  .shifts { max-width: 980px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1fr; gap: 0; }
+
+  .shift {
+    padding: 50px 0;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .shift:last-child { border-bottom: 1px solid var(--border); }
+
+  .shift-axis {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .shift-axis .from { display: block; color: var(--crimson); font-weight: 400; margin-bottom: 8px; font-size: 1.2rem; }
+  .shift-axis .arrow { font-family: 'David Libre', serif; color: var(--gold); font-size: 1.6rem; margin: 4px 0; display: block; }
+  .shift-axis .to { display: block; color: var(--gold); font-weight: 600; font-size: 1.35rem; }
+
+  .shift-content h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+
+  .shift-content p { color: var(--text-dim); line-height: 1.75; font-weight: 300; }
+
+  /* ==================== WAR ROOM ==================== */
+
+  .warroom { max-width: 980px; margin: 0 auto; padding: 0 32px; }
+
+  .warroom-intro {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.25rem;
+    color: var(--text);
+    line-height: 1.55;
+    max-width: 720px;
+    margin: 0 auto 60px;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .floors { display: grid; gap: 2px; background: var(--border); border: 1px solid var(--border); }
+
+  .floor {
+    background: var(--surface);
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 80px 220px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .floor-level {
+    font-family: 'David Libre', serif;
+    font-size: 2.2rem;
+    color: var(--gold);
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .floor-name {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .floor-name .floor-tag {
+    display: block;
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  .floor-desc { color: var(--text-dim); font-weight: 300; line-height: 1.7; font-size: 0.98rem; }
+  .floor-desc .head-count { color: var(--gold); font-weight: 500; }
+
+  /* ==================== EXISTING ARMY (NEW) ==================== */
+
+  .army-intro {
+    max-width: 760px;
+    margin: 0 auto 60px;
+    padding: 0 32px;
+    font-size: 1.08rem;
+    line-height: 1.85;
+    font-weight: 300;
+    color: var(--text);
+  }
+
+  .army-intro p { margin-bottom: 1.4em; }
+  .army-intro strong { color: var(--gold); font-weight: 600; }
+
+  .army-stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    max-width: 980px;
+    margin: 60px auto;
+    padding: 0;
+  }
+
+  .army-stat {
+    background: var(--surface);
+    padding: 36px 28px;
+    text-align: center;
+  }
+
+  .army-stat-num {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 2.6rem;
+    color: var(--gold);
+    line-height: 1;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .army-stat-label {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+    font-weight: 400;
+  }
+
+  .typology-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 90px auto 50px;
+    padding: 0 32px;
+  }
+
+  .typology-header h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .typology-header p {
+    color: var(--text-dim);
+    font-size: 1.02rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .typology {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .typo-cell {
+    background: var(--surface);
+    padding: 30px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .typo-tag {
+    font-family: 'David Libre', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .typo-name {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.18rem;
+    color: var(--text);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .typo-desc {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .services-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 100px auto 50px;
+    padding: 0 32px;
+  }
+
+  .services-header h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .services-header p {
+    color: var(--text-dim);
+    font-size: 1.02rem;
+    font-weight: 300;
+  }
+
+  .services {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .service {
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 50px;
+    align-items: baseline;
+  }
+
+  .service:last-child { border-bottom: 1px solid var(--border); }
+
+  .service-name {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .service-name .num {
+    font-family: 'David Libre', serif;
+    color: var(--text-muted);
+    margin-left: 12px;
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+
+  .service-desc {
+    color: var(--text-dim);
+    line-height: 1.75;
+    font-size: 0.98rem;
+    font-weight: 300;
+  }
+
+  .service-desc strong { color: var(--text); font-weight: 500; }
+
+  /* ==================== INITIATIVES ==================== */
+
+  .initiatives {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .initiative {
+    background: var(--surface);
+    padding: 32px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: background 0.4s ease;
+  }
+
+  .initiative:hover { background: var(--surface-2); }
+
+  .init-num { font-family: 'David Libre', serif; color: var(--gold); font-size: 0.9rem; letter-spacing: 0.15em; font-weight: 700; }
+  .init-title { font-family: 'Frank Ruhl Libre', serif; font-size: 1.2rem; font-weight: 500; line-height: 1.3; color: var(--text); }
+  .init-desc { color: var(--text-dim); font-size: 0.92rem; line-height: 1.65; font-weight: 300; }
+
+  /* ==================== SURPRISES ==================== */
+
+  .surprises { max-width: 880px; margin: 0 auto; padding: 0 32px; }
+
+  .surprise {
+    padding: 36px 0;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 28px;
+    align-items: baseline;
+  }
+
+  .surprise:last-child { border-bottom: 1px solid var(--border); }
+
+  .surprise-num { font-family: 'David Libre', serif; font-size: 1.6rem; color: var(--crimson); font-weight: 500; }
+
+  .surprise-content h4 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+
+  .surprise-content p { color: var(--text-dim); line-height: 1.7; font-weight: 300; }
+
+  /* ==================== HORIZONS (REPLACES TIMELINE) ==================== */
+
+  .horizons {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .horizons-intro {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 60px;
+    line-height: 1.6;
+  }
+
+  .horizons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .horizon {
+    background: var(--surface);
+    padding: 44px 32px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .horizon-tag {
+    font-family: 'David Libre', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .horizon-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.6rem;
+    color: var(--text);
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  .horizon-period {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-2);
+  }
+
+  .horizon-mission {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-style: italic;
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  .horizon-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 8px;
+  }
+
+  .horizon-action {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    color: var(--text);
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .horizon-action::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 0.6rem;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+
+  .horizon-yield {
+    margin-top: 18px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border-2);
+    color: var(--gold);
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .horizon-yield .yield-label {
+    display: block;
+    color: var(--text-muted);
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  /* ==================== BUDGET ==================== */
+
+  .budget-grid {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .budget-headline {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 4.5rem;
+    color: var(--gold);
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .budget-headline .unit { font-size: 1.5rem; color: var(--text-dim); margin-right: 8px; font-weight: 300; }
+
+  .budget-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+
+  .budget-comparison {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    padding: 20px 24px;
+    background: var(--surface);
+    border-right: 3px solid var(--crimson);
+  }
+
+  .budget-comparison strong { color: var(--text); font-weight: 500; }
+
+  .allocation { display: flex; flex-direction: column; gap: 14px; }
+
+  .alloc-row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 18px;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .alloc-pct { font-family: 'Frank Ruhl Libre', serif; font-size: 1.4rem; color: var(--gold); font-weight: 500; }
+  .alloc-name { color: var(--text); font-size: 0.98rem; font-weight: 400; }
+
+  /* ==================== KPIs ==================== */
+
+  .kpis {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .kpi { background: var(--surface); padding: 30px 28px; display: flex; flex-direction: column; gap: 10px; }
+  .kpi-num { font-family: 'David Libre', serif; font-size: 0.8rem; color: var(--gold); letter-spacing: 0.18em; font-weight: 700; }
+  .kpi-name { font-family: 'Frank Ruhl Libre', serif; font-size: 1.15rem; color: var(--text); font-weight: 500; line-height: 1.3; }
+  .kpi-detail { color: var(--text-dim); font-size: 0.88rem; font-weight: 300; line-height: 1.6; }
+
+  /* ==================== CLOSING ==================== */
+
+  .closing {
+    padding: 120px 32px;
+    background: var(--ink-2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .closing::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .closing-mark {
+    font-family: 'David Libre', serif;
+    color: var(--gold);
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    font-weight: 700;
+  }
+
+  .closing h2 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.2;
+    max-width: 760px;
+    margin: 0 auto 48px;
+    color: var(--text);
+  }
+
+  .closing-body {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: right;
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--text-dim);
+    font-weight: 300;
+  }
+
+  .closing-body p { margin-bottom: 1.4em; }
+  .closing-body strong { color: var(--gold); font-weight: 600; }
+
+  .three-truths {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 980px;
+    margin: 70px auto 0;
+    text-align: right;
+  }
+
+  .three-truth {
+    padding: 30px 26px;
+    background: var(--surface);
+    border-top: 2px solid var(--gold);
+  }
+
+  .three-truth-num {
+    font-family: 'David Libre', serif;
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .three-truth-text {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .three-truth-text strong { font-weight: 700; }
+
+  /* ==================== FOOTER ==================== */
+
+  footer {
+    padding: 60px 32px 40px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+  }
+
+  footer .mark {
+    color: var(--gold);
+    font-family: 'David Libre', serif;
+    margin-bottom: 16px;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+  }
+
+  /* ==================== PERFORMER CORPS (NEW v3) ==================== */
+
+  .performer-section {
+    background:
+      radial-gradient(ellipse at top, rgba(184,68,59,0.08) 0%, transparent 60%),
+      linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 50%, var(--ink) 100%);
+    position: relative;
+  }
+
+  .performer-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--crimson), transparent);
+  }
+
+  .performer-intro {
+    max-width: 760px;
+    margin: 0 auto 70px;
+    padding: 0 32px;
+    font-size: 1.1rem;
+    line-height: 1.85;
+    font-weight: 300;
+    color: var(--text);
+  }
+
+  .performer-intro p { margin-bottom: 1.5em; }
+  .performer-intro strong { color: var(--gold); font-weight: 600; }
+  .performer-intro em { font-family: 'Frank Ruhl Libre', serif; font-style: italic; color: var(--text-dim); }
+
+  .spotlight-quote {
+    max-width: 880px;
+    margin: 80px auto;
+    padding: 60px 50px;
+    text-align: center;
+    border: 1px solid var(--gold-dim);
+    background: linear-gradient(180deg, rgba(201,169,97,0.04), rgba(201,169,97,0.01));
+    position: relative;
+  }
+
+  .spotlight-quote::before, .spotlight-quote::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--gold);
+  }
+
+  .spotlight-quote::before {
+    top: -1px;
+    right: -1px;
+    border-bottom: none;
+    border-left: none;
+  }
+
+  .spotlight-quote::after {
+    bottom: -1px;
+    left: -1px;
+    border-top: none;
+    border-right: none;
+  }
+
+  .spotlight-quote-label {
+    font-family: 'David Libre', serif;
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-weight: 700;
+  }
+
+  .spotlight-quote-text {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .spotlight-quote-text strong {
+    font-style: normal;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .differentiators {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .diff-cell {
+    background: var(--surface);
+    padding: 32px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .diff-num {
+    font-family: 'David Libre', serif;
+    color: var(--crimson);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .diff-name {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.2rem;
+    color: var(--text);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .diff-desc {
+    color: var(--text-dim);
+    font-size: 0.93rem;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .price-tag {
+    max-width: 980px;
+    margin: 80px auto 50px;
+    padding: 0 32px;
+  }
+
+  .price-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .price-header h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.85rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .price-header p {
+    color: var(--text-dim);
+    font-size: 1.02rem;
+    font-weight: 300;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .prices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .price-item {
+    background: var(--surface);
+    padding: 28px 30px;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 24px;
+    align-items: baseline;
+  }
+
+  .price-num {
+    font-family: 'David Libre', serif;
+    font-size: 1.5rem;
+    color: var(--crimson);
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .price-content h4 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.1rem;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .price-content p {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .platform-pivot {
+    max-width: 980px;
+    margin: 100px auto 60px;
+    padding: 60px 50px;
+    background: linear-gradient(135deg, var(--surface-2), var(--surface));
+    border-right: 4px solid var(--gold);
+    position: relative;
+  }
+
+  .platform-pivot::before {
+    content: '⟁';
+    position: absolute;
+    top: -1px;
+    right: -22px;
+    background: var(--ink);
+    color: var(--gold);
+    font-size: 1.2rem;
+    padding: 8px;
+    line-height: 1;
+  }
+
+  .platform-tag {
+    font-family: 'David Libre', serif;
+    color: var(--gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+
+  .platform-pivot h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .platform-pivot h3 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  .platform-statement {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: 30px;
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  .platform-pivot p {
+    color: var(--text);
+    font-size: 1.02rem;
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 1.3em;
+  }
+
+  .platform-pivot p strong {
+    color: var(--gold-bright);
+    font-weight: 600;
+  }
+
+  .platform-pillars {
+    margin-top: 36px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-2);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .pillar {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+  }
+
+  .pillar-num {
+    font-family: 'David Libre', serif;
+    color: var(--gold);
+    font-size: 0.95rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .pillar-text {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .pillar-text strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .perf-services-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 100px auto 50px;
+    padding: 0 32px;
+  }
+
+  .perf-services-header h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.85rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .perf-services-header p {
+    color: var(--text-dim);
+    font-size: 1.02rem;
+    font-weight: 300;
+  }
+
+  .perf-services {
+    max-width: 980px;
+    margin: 0 auto 80px;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .perf-service {
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 50px;
+    align-items: baseline;
+  }
+
+  .perf-service:last-child { border-bottom: 1px solid var(--border); }
+
+  .perf-service-name {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.18rem;
+    color: var(--gold);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .perf-service-name .num {
+    font-family: 'David Libre', serif;
+    color: var(--text-muted);
+    margin-left: 12px;
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+
+  .perf-service-desc {
+    color: var(--text-dim);
+    line-height: 1.75;
+    font-size: 0.97rem;
+    font-weight: 300;
+  }
+
+  .perf-service-desc strong { color: var(--text); font-weight: 500; }
+
+  /* ==================== PERSONAL DEDICATION (NEW v4) ==================== */
+
+  .dedication {
+    padding: 100px 32px;
+    background: var(--ink-2);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dedication::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .dedication-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .dedication-mark {
+    font-family: 'David Libre', serif;
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .dedication-mark::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .dedication h2 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 50px;
+    letter-spacing: -0.01em;
+  }
+
+  .dedication-quote {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+    line-height: 1.45;
+    color: var(--gold);
+    padding: 30px 0 30px 32px;
+    border-right: 3px solid var(--gold);
+    margin: 50px 0;
+    font-weight: 400;
+  }
+
+  .dedication-quote-attr {
+    display: block;
+    margin-top: 20px;
+    font-style: normal;
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .dedication-body {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--text);
+    font-weight: 300;
+  }
+
+  .dedication-body p { margin-bottom: 1.5em; }
+  .dedication-body strong { color: var(--gold); font-weight: 600; }
+  .dedication-body em { font-family: 'Frank Ruhl Libre', serif; font-style: italic; color: var(--text-dim); }
+
+  .dedication-signature {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .dedication-signature .from {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1rem;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+
+  .dedication-signature .from strong {
+    color: var(--text);
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .dedication-signature .to {
+    font-family: 'David Libre', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* ==================== EXPLORATION TAG (NEW v4) ==================== */
+
+  .exploration-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    background: rgba(92,114,128,0.12);
+    border: 1px solid var(--steel);
+    color: var(--steel);
+    font-family: 'David Libre', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    width: max-content;
+  }
+
+  .exploration-badge::before {
+    content: '◇';
+    color: var(--steel);
+    font-size: 0.7rem;
+  }
+
+  .exploration-section {
+    background: rgba(92,114,128,0.04);
+    border-right: 2px solid var(--steel);
+    padding: 30px 32px;
+    margin: 30px 0;
+    position: relative;
+  }
+
+  .exploration-section .ex-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .exploration-section .ex-body {
+    color: var(--text-dim);
+    line-height: 1.75;
+    font-weight: 300;
+    font-size: 0.97rem;
+  }
+
+  .exploration-section .ex-body strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .exploration-section .ex-body em {
+    color: var(--steel);
+    font-family: 'Frank Ruhl Libre', serif;
+    font-style: italic;
+  }
+
+  /* ==================== HOTOVELY-FIT INITIATIVES (NEW v4) ==================== */
+
+  .hotovely-section {
+    background:
+      radial-gradient(ellipse at center top, rgba(201,169,97,0.05) 0%, transparent 50%),
+      var(--ink);
+    position: relative;
+  }
+
+  .hotovely-fit-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-dim);
+  }
+
+  .fit-card {
+    background: var(--surface);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+  }
+
+  .fit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 50px;
+    background: var(--gold);
+  }
+
+  .fit-tag {
+    font-family: 'David Libre', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .fit-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.32rem;
+    color: var(--text);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .fit-rationale {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-2);
+    border-bottom: 1px solid var(--border-2);
+  }
+
+  .fit-desc {
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-weight: 300;
+    font-size: 0.95rem;
+  }
+
+  .fit-desc strong { color: var(--text); font-weight: 500; }
+
+  .fit-execution {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-2);
+  }
+
+  .fit-exec-label {
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .fit-exec-item {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    color: var(--text);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  .fit-exec-item::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 0.55rem;
+    line-height: 1.5;
+    flex-shrink: 0;
+  }
+
+  /* ==================== PERSONAL OPENING (NEW v4) ==================== */
+
+  .personal-frame {
+    max-width: 880px;
+    margin: 70px auto;
+    padding: 0 32px;
+  }
+
+  .personal-frame-card {
+    padding: 50px 50px;
+    background: linear-gradient(135deg, var(--surface), var(--surface-2));
+    border-right: 4px solid var(--gold);
+    position: relative;
+  }
+
+  .personal-frame-card::before {
+    content: '✡';
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    color: var(--gold);
+    font-size: 1.2rem;
+    opacity: 0.4;
+  }
+
+  .personal-frame-card .label {
+    font-family: 'David Libre', serif;
+    color: var(--gold);
+    font-size: 0.78rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  .personal-frame-card h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .personal-frame-card p {
+    color: var(--text-dim);
+    font-size: 1.02rem;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 1em;
+  }
+
+  .personal-frame-card p:last-child { margin-bottom: 0; }
+  .personal-frame-card strong { color: var(--gold); font-weight: 600; }
+  .personal-frame-card em { font-family: 'Frank Ruhl Libre', serif; font-style: italic; color: var(--text); }
+
+  /* ==================== PLURALISM SECTION (NEW v5) ==================== */
+
+  .pluralism-section {
+    background:
+      radial-gradient(ellipse at top right, rgba(107,144,128,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at bottom left, rgba(184,68,59,0.04) 0%, transparent 50%),
+      var(--ink);
+    position: relative;
+  }
+
+  .pluralism-intro {
+    max-width: 760px;
+    margin: 0 auto 70px;
+    padding: 0 32px;
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--text);
+    font-weight: 300;
+  }
+
+  .pluralism-intro p { margin-bottom: 1.4em; }
+  .pluralism-intro strong { color: var(--gold); font-weight: 600; }
+  .pluralism-intro em { font-family: 'Frank Ruhl Libre', serif; font-style: italic; color: var(--text-dim); }
+
+  /* Spectrum visualization */
+  .spectrum-viz {
+    max-width: 980px;
+    margin: 80px auto;
+    padding: 0 32px;
+  }
+
+  .spectrum-label {
+    text-align: center;
+    font-family: 'David Libre', serif;
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-weight: 700;
+  }
+
+  .spectrum-headline {
+    text-align: center;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    color: var(--text);
+    margin-bottom: 60px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .spectrum-bar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 30px;
+  }
+
+  .spectrum-cell {
+    background: var(--surface);
+    padding: 24px 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .spectrum-cell.left {
+    border-top: 4px solid #4A6FA5;
+  }
+
+  .spectrum-cell.center-left {
+    border-top: 4px solid #6B9080;
+  }
+
+  .spectrum-cell.center {
+    border-top: 4px solid var(--gold);
+  }
+
+  .spectrum-cell.center-right {
+    border-top: 4px solid #C9876B;
+  }
+
+  .spectrum-cell.right {
+    border-top: 4px solid var(--crimson);
+  }
+
+  .spectrum-position {
+    font-family: 'David Libre', serif;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .spectrum-percent {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.8rem;
+    color: var(--text);
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .spectrum-percent .small {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    font-weight: 300;
+  }
+
+  .spectrum-name {
+    color: var(--text-dim);
+    font-size: 0.78rem;
+    line-height: 1.3;
+  }
+
+  .spectrum-arrow-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    margin-bottom: 30px;
+  }
+
+  .spectrum-trend {
+    text-align: center;
+    padding: 8px;
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .trend-down { color: var(--crimson); }
+  .trend-stable { color: var(--text-muted); }
+  .trend-up { color: var(--emerald); }
+
+  .spectrum-takeaway {
+    background: var(--surface);
+    padding: 30px 36px;
+    border-right: 4px solid var(--gold);
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.18rem;
+    line-height: 1.55;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .spectrum-takeaway strong {
+    color: var(--gold);
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  /* The 5 laws */
+  .laws-header {
+    max-width: 760px;
+    margin: 100px auto 50px;
+    padding: 0 32px;
+    text-align: center;
+  }
+
+  .laws-header h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.85rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .laws-header p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .laws {
+    max-width: 980px;
+    margin: 0 auto 80px;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .law {
+    padding: 36px 0;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+
+  .law:last-child { border-bottom: 1px solid var(--border); }
+
+  .law-num {
+    font-family: 'David Libre', serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 6px;
+  }
+
+  .law-num .law-num-big {
+    font-size: 2.2rem;
+    color: var(--gold);
+    line-height: 1;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 6px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .law-content h4 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  .law-content .law-claim {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 1.05rem;
+    line-height: 1.55;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-2);
+  }
+
+  .law-content p {
+    color: var(--text-dim);
+    line-height: 1.75;
+    font-weight: 300;
+    font-size: 0.97rem;
+  }
+
+  .law-content p strong { color: var(--text); font-weight: 500; }
+
+  /* Liberal voices showcase */
+  .liberal-voices-header {
+    max-width: 720px;
+    margin: 100px auto 50px;
+    padding: 0 32px;
+    text-align: center;
+  }
+
+  .liberal-voices-header h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.85rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .liberal-voices-header p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .voices-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .voice-cell {
+    background: var(--surface);
+    padding: 26px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .voice-name {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.08rem;
+    color: var(--gold);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .voice-platform {
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  .voice-desc {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    line-height: 1.55;
+    font-weight: 300;
+    margin-top: 4px;
+  }
+
+  /* Initiative card */
+  .pluralism-initiative {
+    max-width: 980px;
+    margin: 80px auto;
+    padding: 0 32px;
+  }
+
+  .pi-card {
+    padding: 50px 50px;
+    background: linear-gradient(135deg, var(--surface), var(--surface-2));
+    border-right: 4px solid var(--emerald);
+    position: relative;
+  }
+
+  .pi-card::before {
+    content: '◇';
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    color: var(--emerald);
+    font-size: 1.3rem;
+    opacity: 0.5;
+  }
+
+  .pi-card .label {
+    font-family: 'David Libre', serif;
+    color: var(--emerald);
+    font-size: 0.78rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .pi-card h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.25;
+    margin-bottom: 24px;
+  }
+
+  .pi-card .pi-mission {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-style: italic;
+    font-size: 1.18rem;
+    color: var(--gold);
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+
+  .pi-card p {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 1.2em;
+  }
+
+  .pi-card p strong {
+    color: var(--gold-bright);
+    font-weight: 600;
+  }
+
+  .pi-pillars {
+    margin-top: 30px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border-2);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .pi-pillar {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+  }
+
+  .pi-pillar-num {
+    font-family: 'David Libre', serif;
+    color: var(--emerald);
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .pi-pillar-text {
+    color: var(--text-dim);
+    font-size: 0.93rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .pi-pillar-text strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Structural protection card */
+  .protection-frame {
+    max-width: 980px;
+    margin: 60px auto;
+    padding: 0 32px;
+  }
+
+  .protection-card {
+    padding: 40px 44px;
+    background: var(--surface-2);
+    border: 1px dashed var(--gold);
+    position: relative;
+  }
+
+  .protection-card .pf-label {
+    font-family: 'David Libre', serif;
+    color: var(--gold);
+    font-size: 0.78rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .protection-card h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .protection-card p {
+    color: var(--text-dim);
+    line-height: 1.75;
+    font-size: 0.97rem;
+    font-weight: 300;
+    margin-bottom: 1em;
+  }
+
+  .protection-card p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .protection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .protection-item {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .protection-item::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ==================== ANIMATION ==================== */
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ==================== RESPONSIVE ==================== */
+
+  @media (max-width: 768px) {
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc-item:nth-child(odd) { padding-left: 0; border-left: none; }
+    .toc-item:nth-child(even) { padding-right: 0; }
+    .truth, .shift, .service { grid-template-columns: 1fr; gap: 18px; }
+    .floor { grid-template-columns: 1fr; gap: 16px; }
+    .initiatives, .kpis { grid-template-columns: 1fr; }
+    .typology { grid-template-columns: 1fr; }
+    .army-stat-row { grid-template-columns: 1fr; }
+    .horizons-grid { grid-template-columns: 1fr; }
+    .differentiators { grid-template-columns: 1fr; }
+    .prices { grid-template-columns: 1fr; }
+    .perf-service { grid-template-columns: 1fr; gap: 16px; }
+    .platform-pillars { grid-template-columns: 1fr; }
+    .platform-pivot { padding: 40px 28px; }
+    .spotlight-quote { padding: 40px 28px; }
+    .hotovely-fit-grid { grid-template-columns: 1fr; }
+    .personal-frame-card { padding: 32px 28px; }
+    .dedication-signature { flex-direction: column; align-items: flex-start; }
+    .spectrum-bar { grid-template-columns: 1fr; }
+    .spectrum-arrow-row { grid-template-columns: 1fr; }
+    .voices-grid { grid-template-columns: 1fr; }
+    .law { grid-template-columns: 1fr; gap: 18px; }
+    .pi-card { padding: 32px 28px; }
+    .pi-pillars { grid-template-columns: 1fr; }
+    .protection-card { padding: 28px 24px; }
+    .budget-grid { grid-template-columns: 1fr; gap: 40px; }
+    .three-truths { grid-template-columns: 1fr; }
+    .pullquote { padding: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-stamp">
+      <span class="stamp-mark">סיווג</span>
+      <span>מסמך עמדה אישי — לעיון ראשת המערך</span>
+      <span class="stamp-line"></span>
+    </div>
+
+    <div class="hero-eyebrow">דוקטרינה אסטרטגית · תשפ"ו / 2026</div>
+
+    <h1>ניצחון<br>התודעה<span class="alt">.</span></h1>
+
+    <p class="hero-sub">
+      איך הופכים את מערך ההסברה הלאומי
+      ממנגנון חצי-מאויש למעצמת תקשורת אסטרטגית
+      תוך 90 ימים — וממנה ל"מטה התודעה" של המאה ה־21.
+    </p>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">מוגש לכבוד</span>
+        <span class="hero-meta-value">השרה ציפי חוטובלי</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">לקראת כניסה לתפקיד</span>
+        <span class="hero-meta-value">5 במאי 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">היקף</span>
+        <span class="hero-meta-value">14 פרקים · 70+ יוזמות</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">אופק</span>
+        <span class="hero-meta-value">90 ימים — 5 שנים</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== PERSONAL DEDICATION (NEW v4) ==================== -->
+<section class="dedication">
+  <div class="dedication-inner">
+    <div class="dedication-mark reveal">פתח דבר · אישי</div>
+
+    <h2 class="reveal">לכבוד השרה ציפי חוטובלי, ראשת מערך ההסברה הלאומי הנכנסת.</h2>
+
+    <div class="dedication-quote reveal">
+      "הארץ הזו היא כולה שלנו.<br>
+      לא הגענו לכאן כדי להתנצל."
+      <span class="dedication-quote-attr">— את עצמך, פגישתך הראשונה במשרד החוץ, 2015</span>
+    </div>
+
+    <div class="dedication-body reveal">
+      <p>המשפט שלך מ-2015 הוא לא רטוריקה — אלא <strong>דוקטרינה תפעולית</strong>. כל פרק כאן מתרגם את העיקרון הזה למבנה ארגוני, לתקציב, לסמכויות, ולמהירות תגובה.</p>
+
+      <p>חמש השנים שלך בלונדון נתנו לך משהו ייחודי: <strong>ידיעה אישית של הזירה האנגלוסקסית מבפנים</strong>. ה־BBC כורעת תחת תלונותיך. LSE שאת חוויית על בשרך כשפינו אותך משם. 80 איש בשגרירות, אוקספורד וקיימברידג', Sky, ITV, CNN, Bloomberg. <em>זו אינה כניסה לתפקיד חדש — זו הרחבה של מערכה שכבר ניהלת</em>, הפעם בקנה מידה לאומי ועם הסמכויות של מטה ההסברה הלאומי.</p>
+
+      <p>המסמך לא מתחנף. הוא מציע מהלכים שתזדהי עמם מיד — לוחמה חזיתית במדיה האנגלוסקסית, מטה lawfare גלובלי, מערך לפעילים בקמפוסי עילית, וקואליציית הימין השמרני. הוא גם מציע מהלכים מורכבים שמסומנים כ<em>"אופציות לבחינה"</em>. <strong>זו ההזדמנות הגדולה ביותר במערך הזה זה עשור. את הלוחמת המתאימה לרגע הזה.</strong></p>
+    </div>
+
+    <div class="dedication-signature reveal">
+      <div class="from"><strong>בכבוד רב,</strong><br>מרדכי שנוולד</div>
+      <div class="to">תשפ"ו · ערב כניסה לתפקיד</div>
+    </div>
+  </div>
+</section>
+<section class="toc">
+  <div class="container">
+    <div class="section-num reveal">תוכן · Contents</div>
+    <div class="toc-grid">
+      <a href="#diagnosis" class="toc-item reveal"><span class="toc-num">א.</span><span class="toc-title">האבחנה — חמש אמיתות שלא מעיזים להגיד</span></a>
+      <a href="#pivot" class="toc-item reveal"><span class="toc-num">ב.</span><span class="toc-title">הפיבוט הגדול — מהסברה לתקשורת אסטרטגית</span></a>
+      <a href="#shifts" class="toc-item reveal"><span class="toc-num">ג.</span><span class="toc-title">חמשת השינויים האסטרטגיים</span></a>
+      <a href="#warroom" class="toc-item reveal"><span class="toc-num">ד.</span><span class="toc-title">המודל התפעולי — חמ״ל זמן אמת ומילואים תקשורתיים</span></a>
+      <a href="#pluralism" class="toc-item reveal"><span class="toc-num">ה.</span><span class="toc-title">אסטרטגיית הקשת — מתקיפים מכל הזירות</span></a>
+      <a href="#hotovely-fit" class="toc-item reveal"><span class="toc-num">ו.</span><span class="toc-title">חמש זרועות מותאמות לרקע ולסגנון שלך</span></a>
+      <a href="#existing" class="toc-item reveal"><span class="toc-num">ז.</span><span class="toc-title">חזית הקיימים — הצבא שכבר נלחם</span></a>
+      <a href="#performers" class="toc-item reveal"><span class="toc-num">ח.</span><span class="toc-title">כוח השחקנים-שגרירים — הנכס היקר ביותר</span></a>
+      <a href="#initiatives" class="toc-item reveal"><span class="toc-num">ט.</span><span class="toc-title">אחת־עשרה יוזמות הליבה</span></a>
+      <a href="#surprises" class="toc-item reveal"><span class="toc-num">י.</span><span class="toc-title">שישה מהלכים מפתיעים</span></a>
+      <a href="#horizons" class="toc-item reveal"><span class="toc-num">יא.</span><span class="toc-title">שלושת האופקים — מ־90 ימים ל־5 שנים</span></a>
+      <a href="#budget" class="toc-item reveal"><span class="toc-num">יב.</span><span class="toc-title">תקציב ומבנה ארגוני</span></a>
+      <a href="#kpis" class="toc-item reveal"><span class="toc-num">יג.</span><span class="toc-title">מדדי הצלחה — נתונים, לא תחושה</span></a>
+      <a href="#stakes" class="toc-item reveal" style="grid-column: 1 / -1; padding-left: 0; border-left: none;"><span class="toc-num">יד.</span><span class="toc-title">מה על הכף</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== I. DIAGNOSIS ==================== -->
+<section id="diagnosis" class="body-section">
+  <div class="section-header reveal">
+    <div class="section-num">א · האבחנה</div>
+    <h2 class="section-title">חמש אמיתות שלא מעיזים להגיד.</h2>
+    <p class="section-lede">אנחנו דוברי אמת כבר עשורים. זה לא נותן לנו ניצחון מול שקרים. צריך לדעת לא רק להגיד את האמת — אלא איך, מתי, ואיפה.</p>
+  </div>
+
+  <div class="truths">
+    <div class="truth reveal">
+      <div class="truth-num">01</div>
+      <div class="truth-content">
+        <h3>המילה "הסברה" היא חלק מהבעיה.</h3>
+        <p>היא משדרת התנצלות. צורך להסביר את עצמנו. עוד לפני שאמרנו מילה — כבר הפסדנו. צריך לעבור למילון של מי שמעצב נרטיב, לא של מי שמתנצל עליו.</p>
+      </div>
+    </div>
+
+    <div class="truth reveal">
+      <div class="truth-num">02</div>
+      <div class="truth-content">
+        <h3>אנחנו במלחמה אסימטרית באלגוריתם סימטרי.</h3>
+        <p>היריב נהנה מאלגוריתם של זעם. אנחנו מנסים לשכנע באמצעות עובדות. זעם טס. עובדות זוחלות. בלי מודל הפצה חדש — האמת לא תגיע.</p>
+      </div>
+    </div>
+
+    <div class="truth reveal">
+      <div class="truth-num">03</div>
+      <div class="truth-content">
+        <h3>הקול הרשמי מת.</h3>
+        <p>"דובר רשמי" = פסילה אוטומטית בעיני דור Z. כל שקל שהמשרד משקיע בדובר רשמי במקום ביוצר אותנטי הוא שקל ששורף את עצמו. האמינות עברה מהמדים אל הוורלוג.</p>
+      </div>
+    </div>
+
+    <div class="truth reveal">
+      <div class="truth-num">04</div>
+      <div class="truth-content">
+        <h3>אנחנו מוכרים למי שכבר קנה.</h3>
+        <p>רוב משאבי ההסברה היום מגיעים לקהלים שכבר אוהדים אותנו — קונגרסים יהודיים, מדינאים אוהבים, פסטיבלים פרו־ישראליים. הקהלים האמיתיים שעוד אפשר להניע לא נחשפים אלינו כלל.</p>
+      </div>
+    </div>
+
+    <div class="truth reveal">
+      <div class="truth-num">05</div>
+      <div class="truth-content">
+        <h3>מהירות גוברת על עומק.</h3>
+        <p>הנרטיב הראשון מנצח. תוך שש שעות מאירוע — הסיפור כבר נחתם בתודעה הגלובלית. אנחנו מגיבים ב־48 שעות עם הודעה חתומה משלוש קומות. זה איבוד שדה הקרב מראש.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ב. THE PIVOT ==================== -->
+<section id="pivot" class="body-section">
+  <div class="section-header reveal">
+    <div class="section-num">ב · הפיבוט הגדול</div>
+    <h2 class="section-title">מ"מערך ההסברה" ל"מטה הלוחמה התודעתית".</h2>
+    <p class="section-lede">זו לא קוסמטיקה. זה השינוי המהותי הראשון שצריך לעשות — בחודש הראשון.</p>
+  </div>
+
+  <div class="prose reveal">
+    <p>המערך עצמו צריך לעבור מיתוג מחדש. <strong>"מטה הלוחמה התודעתית — לאומי"</strong>. כפי שטראמפ החליף את "משרד ההגנה" ל"משרד המלחמה", אנחנו מחליפים "הסברה" ב"לוחמה". <strong>כי זו לא הסברה — זו מלחמה.</strong></p>
+
+    <p>זה ההבדל בין מנגנון שמתחנן לתשומת לב — לבין מטה שתובע הכרה. בין מי שמסביר את עצמו — לבין מי שתוקף. <strong>שם חדש = הכרזת תפיסת עולם חדשה.</strong></p>
+
+    <p>ובהיגיון הרחב: המודל החדש איננו <em>"הסברת ישראל בעולם"</em> — אלא <strong>"מאבק עולמי בטרור ובאסלאם הרדיקלי בחזית התודעה"</strong>. אנחנו לא נמצאים על שולחן הנאשמים. אנחנו מציבים את שולחן הדיון. <em>"לא הגענו להתנצל"</em> הופך ממשפט אישי למבנה. למטה. לא רק לדובר.</p>
+  </div>
+
+  <div class="pullquote reveal">
+    <p class="pullquote-text">
+      מערך ש"מסביר" כבר הפסיד.<br>
+      מטה ש<strong>תובע הכרה</strong> רק התחיל.
+    </p>
+  </div>
+</section>
+
+<!-- ==================== III. SHIFTS ==================== -->
+<section id="shifts" class="body-section">
+  <div class="section-header reveal">
+    <div class="section-num">ג · חמשת השינויים</div>
+    <h2 class="section-title">חמש מטוטלות. הזזה אחת. מהפך מבני.</h2>
+    <p class="section-lede">לא טקטיקה — דוקטרינה. כל אחד מהשינויים שלם בפני עצמו, וביחד זה כבר ממש מהפך.</p>
+  </div>
+
+  <div class="shifts">
+    <div class="shift reveal">
+      <div class="shift-axis">
+        <span class="from">הגנה</span>
+        <span class="arrow">↞</span>
+        <span class="to">התקפה נרטיבית</span>
+      </div>
+      <div class="shift-content">
+        <h3>אנחנו לא מגיבים. אנחנו מציבים.</h3>
+        <p>שלושה נושאים בשבוע שאנחנו מציבים על שולחן השיח העולמי: דיכוי בערב הסעודית. עינויי מתנגדים בעזה על ידי חמאס. חוקי הגירה באירופה. קריסת UNRWA. <strong>אנחנו לא רק מתגוננים מטיעוני היריב — אנחנו תוקפים עם הטיעונים שלנו. עכשיו הוא צריך להתגונן.</strong></p>
+      </div>
+    </div>
+
+    <div class="shift reveal">
+      <div class="shift-axis">
+        <span class="from">מרכוז</span>
+        <span class="arrow">↞</span>
+        <span class="to">פיזור־על</span>
+      </div>
+      <div class="shift-content">
+        <h3>מ"מסר אחד מאיש אחד" ל"אלף קולות בלי מסר אחד".</h3>
+        <p>הפסקנו לנסות להגיד לעולם מה לחשוב. במקום זאת — מציעים כלים לאלף יוצרים שיגידו את שלהם. <em>Open־Source הסברה</em>: מאגרי תוכן, פוטאז' מאומת, תרגומים, נתונים, תבניות — חופשיים לכל יוצר פרו־ישראלי בעולם, ללא תיאום וללא תמורה. <strong>גישה מאובטחת — רק לחשבונות שעברו אימות פרו־ישראלי.</strong></p>
+      </div>
+    </div>
+
+    <div class="shift reveal">
+      <div class="shift-axis">
+        <span class="from">איטי</span>
+        <span class="arrow">↞</span>
+        <span class="to">זמן אמת</span>
+      </div>
+      <div class="shift-content">
+        <h3>תגובה ב־90 דקות, לא 48 שעות.</h3>
+        <p>חמ״ל פעיל 24/7. ניטור AI של 1,000 חשבונות בעלי השפעה אנטי־ישראלית. זיהוי טענות חדשות תוך דקות. מסגרת תגובה מבוססת מצב — תבניות מוכנות מראש לעשרה תרחישים מרכזיים. מהאירוע ועד התגובה הציבורית הראשונה — שעה וחצי.</p>
+      </div>
+    </div>
+
+    <div class="shift reveal">
+      <div class="shift-axis">
+        <span class="from">ערוץ אחד</span>
+        <span class="arrow">↞</span>
+        <span class="to">רב־ערוצי, רב־לשוני</span>
+      </div>
+      <div class="shift-content">
+        <h3>לאן שהקהלים האמיתיים נמצאים.</h3>
+        <p>לא רק טוויטר ולינקדאין. TikTok, YouTube, Twitch, Discord, Substack, Reddit, Telegram — לכל פלטפורמה אסטרטגיית תוכן ייעודית. ולא רק אנגלית: ערבית, ספרדית, פורטוגזית, מנדרינית, הינדית. שבעים אחוז מהאנושות אינה דוברת אנגלית — ואנחנו דוברים אליה אנגלית.</p>
+      </div>
+    </div>
+
+    <div class="shift reveal">
+      <div class="shift-axis">
+        <span class="from">הסברה</span>
+        <span class="arrow">↞</span>
+        <span class="to">סיפור אנושי</span>
+      </div>
+      <div class="shift-content">
+        <h3>הקהל לא רוצה אמת. הוא רוצה להיות מרוגש.</h3>
+        <p>לא לטעון. לספר. לא טיעונים — פנים. פצוע צה"ל. אם של חטוף. רופא במגן דוד אדום. ערבי־ישראלי בפיקוד הצפון. לוחם בדואי. אישה דרוזית בכנסת. מאה סיפורים שמשנים תפיסה יותר מאלף נאומים.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== IV. WAR ROOM ==================== -->
+<section id="warroom" class="body-section">
+  <div class="section-header reveal">
+    <div class="section-num">ד · המודל התפעולי</div>
+    <h2 class="section-title">חמ״ל לוחמה תודעתית 24/7 — וצבא מילואים תקשורתי.</h2>
+    <p class="section-lede">כפי שיש לנו מטכ״ל, מל"ל ומוסד — צריך להיות לנו מנגנון תפעולי באותה רמה לזירת התודעה. וכמו שיש לצה"ל מילואים — צריך להיות גם למטה הזה.</p>
+  </div>
+
+  <div class="warroom">
+    <p class="warroom-intro reveal">
+      "חדר מצב" של 100 אנשים — שלוש קומות, פעיל סביב השעון.<br>
+      ראש האגף בדרגת מנכ"ל, מינוי בדרגה ביטחונית.<br>
+      <strong style="color: var(--gold);">ומסביבו — 15,000 לוחמי מילואים תקשורתיים.</strong>
+    </p>
+
+    <div class="floors">
+      <div class="floor reveal">
+        <div class="floor-level">01</div>
+        <div class="floor-name">
+          ניטור ומודיעין
+          <span class="floor-tag">Intelligence Floor</span>
+        </div>
+        <div class="floor-desc">
+          <span class="head-count">30 איש.</span> מנטרים בזמן אמת 50 מילות מפתח, 1,000 חשבונות מובילים, 30 פלטפורמות, 8 שפות. מערכת AI מסמנת זינוקי תפוצה ומזהה טענות חדשות תוך דקות. אנליסטים מדרגים סיכון, מהירות, וצורך בתגובה.
+        </div>
+      </div>
+
+      <div class="floor reveal">
+        <div class="floor-level">02</div>
+        <div class="floor-name">
+          ייצור תוכן
+          <span class="floor-tag">Content Studio</span>
+        </div>
+        <div class="floor-desc">
+          <span class="head-count">50 איש.</span> שש צוותי ייצור: וידאו קצר, וידאו ארוך, גרפיקה ומימים, טקסט, פודקאסטים, תרגום וטרנס־קריאציה. יעד יומי: 100 יחידות תוכן ב־7 שפות. סטנדרט הפקה — לא של משרד ממשלתי. של אולפן הוליוודי.
+        </div>
+      </div>
+
+      <div class="floor reveal">
+        <div class="floor-level">03</div>
+        <div class="floor-name">
+          הפצה ושותפויות
+          <span class="floor-tag">Distribution &amp; Alliance</span>
+        </div>
+        <div class="floor-desc">
+          <span class="head-count">20 איש.</span> אחראי על ניהול רשת היוצרים העולמית, יחסים ישירים עם פלטפורמות (Meta, TikTok, YouTube), שותפויות מדיה, הפצה לדיפלומטים בעולם, מערך לוביסטים בעצרות.
+        </div>
+      </div>
+    </div>
+
+    <!-- מילואים תקשורתיים - הרעיון החדש -->
+    <div style="max-width: 980px; margin: 80px auto 0; padding: 0 32px;">
+      <div class="personal-frame-card" style="background: linear-gradient(135deg, var(--surface), var(--surface-2)); padding: 50px 50px;">
+        <div class="label">מבנה מבצעי חדש</div>
+        <h3>מילואים תקשורתיים — הצבא ה־16,000 שכבר בשטח.</h3>
+        <p style="color: var(--text); font-weight: 400;">בישראל יש כבר היום בין 15,000 ל־20,000 פעילים פרו־ישראלים פעילים ברשתות. הם נלחמים מול BBC, BDS, וטיקטוקים אנטישמיים — <strong style="color: var(--gold);">כל אחד לבד, על חשבון הזמן הפרטי שלו, ללא שום תמיכה</strong>. כמו צה"ל בלי מילואים. זה לא מבצעי.</p>
+
+        <p style="margin-top: 20px;">המודל החדש — <strong>"מילואים תקשורתיים"</strong> — לוקח את המבנה שכל ישראלי מבין: שירות מילואים, אבל בחזית התודעה. מי שעומד בקריטריונים (השפעה, ותק, איכות תוכן, אימות פרו־ישראלי) מקבל:</p>
+
+        <div class="platform-pillars" style="margin-top: 28px;">
+          <div class="pillar">
+            <span class="pillar-num">01</span>
+            <span class="pillar-text"><strong>תעודת מילואים תקשורתי.</strong> הכרה רשמית. מעמד.</span>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">02</span>
+            <span class="pillar-text"><strong>תגמול ימי מילואים.</strong> עד 30 ימים בשנה. תקציב מובטח.</span>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">03</span>
+            <span class="pillar-text"><strong>גישה לבנק תוכן מאובטח.</strong> פוטאז', נתונים, תרגומים.</span>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">04</span>
+            <span class="pillar-text"><strong>הגנה משפטית 24/7.</strong> תביעות, חסימות, איומים.</span>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">05</span>
+            <span class="pillar-text"><strong>תמיכה פלטפורמתית.</strong> שחזור חשבונות, גישה ל־Trust &amp; Safety.</span>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">06</span>
+            <span class="pillar-text"><strong>קריאת מילואים בשעת חירום.</strong> מבצע מתואם, יעדים מוגדרים.</span>
+          </div>
+        </div>
+
+        <p style="margin-top: 30px; font-style: italic; color: var(--gold); font-family: 'Frank Ruhl Libre', serif; font-size: 1.1rem;">למה זה גאוני: הם כבר נלחמים. יש להם כבר עוקבים. יש להם כבר השפעה. <strong style="font-style: normal;">אנחנו רק נותנים להם את מה שצה"ל נותן ללוחם — תקציב, גיבוי, וכבוד.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ה. PLURALISM AS WARFARE ==================== -->
+<section id="pluralism" class="body-section pluralism-section">
+  <div class="section-header reveal">
+    <div class="section-num">ה · אסטרטגיית הקשת</div>
+    <h2 class="section-title">מתקיפים מכל הזירות.<br>הבייס הוא זירה אסטרטגית — לא פינה בטוחה.</h2>
+    <p class="section-lede">העיקרון הוא פשוט: לא אכפת למפקד בצה"ל מה הדעות הפוליטיות של החיילים. העיקר שכולם בשביל ישראל. אותו עיקרון בדיוק כאן.</p>
+  </div>
+
+  <div class="pluralism-intro reveal">
+    <p>הקרב על תפיסת ישראל בעולם מתנהל בשתי חזיתות במקביל: <strong>חיזוק והגדלת הבייס שתומך בנו</strong>, וגם <strong>הרחבת המעגל אל קהלים שעוד אפשר להניע</strong>. זו לא דילמה — זו פעולה בו־זמנית.</p>
+
+    <p>הימין השמרני בעולם הוא הבייס שלנו. <strong>זו הזירה הראשונה — חיונית, לא ויתור עליה.</strong> אבל יש זירה שנייה: שני־שלישים מהקהל הגלובלי שאי־אפשר לוותר עליו אינו ימני־שמרני. The Atlantic, NPR, Le Monde, חלק מה־Democrats, חלק מה־Labour, ובעיקר דור Z במערב — שם הסיפור נכתב או נשבר.</p>
+
+    <p>הפרק לא מציע להעדיף שמאל על פני ימין. <em>הוא מציע להוסיף — לפעול בכל הזירות במקביל.</em></p>
+  </div>
+
+  <!-- Spectrum visualization -->
+  <div class="spectrum-viz reveal">
+    <div class="spectrum-label">מפת הקהל הגלובלי — תמיכה בישראל לפי קשת פוליטית</div>
+    <h3 class="spectrum-headline">שתי זירות. שתיהן חיוניות.</h3>
+
+    <div class="spectrum-bar">
+      <div class="spectrum-cell left">
+        <span class="spectrum-position">שמאל</span>
+        <span class="spectrum-percent">12<span class="small">%</span></span>
+        <span class="spectrum-name">תמיכה<br>בישראל</span>
+      </div>
+      <div class="spectrum-cell center-left">
+        <span class="spectrum-position">מרכז־שמאל</span>
+        <span class="spectrum-percent">28<span class="small">%</span></span>
+        <span class="spectrum-name">דמוקרטים,<br>ליבור, ירוקים</span>
+      </div>
+      <div class="spectrum-cell center">
+        <span class="spectrum-position">מרכז</span>
+        <span class="spectrum-percent">52<span class="small">%</span></span>
+        <span class="spectrum-name">לא־מפלגתיים,<br>בלתי החלטיים</span>
+      </div>
+      <div class="spectrum-cell center-right">
+        <span class="spectrum-position">מרכז־ימין</span>
+        <span class="spectrum-percent">71<span class="small">%</span></span>
+        <span class="spectrum-name">רפובליקנים<br>מתונים, שמרנים</span>
+      </div>
+      <div class="spectrum-cell right">
+        <span class="spectrum-position">ימין</span>
+        <span class="spectrum-percent">82<span class="small">%</span></span>
+        <span class="spectrum-name">MAGA, AfD,<br>RN, הימין הקיצוני</span>
+      </div>
+    </div>
+
+    <div class="spectrum-arrow-row">
+      <div class="spectrum-trend trend-down">↓ קורס במהירות</div>
+      <div class="spectrum-trend trend-down">↓ יורד</div>
+      <div class="spectrum-trend trend-stable">↔ נע</div>
+      <div class="spectrum-trend trend-up">↑ לחזק</div>
+      <div class="spectrum-trend trend-up">↑ לחזק</div>
+    </div>
+
+    <div class="spectrum-takeaway">
+      <strong>המסקנה הפרקטית:</strong> הימין כבר אצלנו — חזית הבייס. <strong>חובה לחזק ולהגדיל אותו</strong>, כי בלי בייס חזק אין השפעה. במקביל — חזית ההרחבה במרכז ובמרכז־שמאל היא איפה שיש פוטנציאל גדילה. <strong>שתי הזירות במקביל. לא או־או.</strong>
+    </div>
+  </div>
+
+  <!-- The 5 Laws -->
+  <div class="laws-header reveal">
+    <h3>חמשת חוקי הקרב הנרטיבי</h3>
+    <p>חמישה עקרונות פרקטיים שנגזרים מנתונים גלובליים — לא מהעדפות פוליטיות.</p>
+  </div>
+
+  <div class="laws">
+
+    <div class="law reveal">
+      <div class="law-num">
+        <span class="law-num-big">01</span>
+        חוק
+      </div>
+      <div class="law-content">
+        <h4>חוק חיזוק הבייס.</h4>
+        <p class="law-claim">"הבייס שלנו הוא הקרקע שכל ההסברה נשענת עליה. בלי בייס חזק, אין השפעה על אף אחד אחר."</p>
+        <p>הימין השמרני הוא הבייס שלנו, וזה נכס אסטרטגי שאסור לקחת כמובן מאליו. <strong>חיזוק והגדלת הבייס היא הזירה הראשונה — לא ויתור עליה.</strong> שותפויות עם CFI, GOP, AIPAC, Heritage, AEI, הקהילה האורתודוקסית — אלה התשתית. בלי תשתית חזקה, כל הרחבה היא ארעית.</p>
+      </div>
+    </div>
+
+    <div class="law reveal">
+      <div class="law-num">
+        <span class="law-num-big">02</span>
+        חוק
+      </div>
+      <div class="law-content">
+        <h4>חוק זירת ההרחבה.</h4>
+        <p class="law-claim">"במקביל לחיזוק הבייס — חייבים לפעול גם בקהלים שעוד לא הצטרפו, אחרת הבייס יישחק."</p>
+        <p>אם נשאר רק בבועת הבייס — בעוד עשור הוא יהיה מבודד. הקהל שעוד אפשר להניע נמצא בקרב 35% במרכז־שמאל ו־52% במרכז. <strong>זה לא מחליף את חיזוק הבייס — זה מה שמבטיח שהבייס לא ישאר לבד</strong>.</p>
+      </div>
+    </div>
+
+    <div class="law reveal">
+      <div class="law-num">
+        <span class="law-num-big">03</span>
+        חוק
+      </div>
+      <div class="law-content">
+        <h4>חוק האמינות הצולבת.</h4>
+        <p class="law-claim">"קול פרו־ישראלי לא צפוי משפיע פי 2 — כי הוא פורץ את הקו של 'מלחמה אידיאולוגית'."</p>
+        <p>כשטד קרוז מדבר בעדנו, אף אחד לא מופתע. כשבארי וייס, סם האריס, או יאיר רוזנברג מדברים בעדנו — זה מטלטל. <strong>קולות שאינם צפויים מאמינים פי שניים</strong>. זה ממצא מחקרי בכל מחקר תקשורת מהעשור האחרון. שם נמצא ה־ROI הגבוה ביותר.</p>
+      </div>
+    </div>
+
+    <div class="law reveal">
+      <div class="law-num">
+        <span class="law-num-big">04</span>
+        חוק
+      </div>
+      <div class="law-content">
+        <h4>חוק הדור הבא.</h4>
+        <p class="law-claim">"דור Z במערב הוא ליברלי בעיקרו. תוך עשור, הם מקבלי ההחלטות. אסור לוותר עליהם."</p>
+        <p>בני 18-29 בארה"ב, בריטניה, ובאירופה הם הליברלים ביותר בכל סקר. <strong>הם גם דור הסטודנטים, הסופרים, היזמים, והעיתונאים שיעצבו את 2030-2040</strong>. בייס חזק היום + השפעה על דור הצעיר היום = כוח השפעה אמיתי בעוד עשור.</p>
+      </div>
+    </div>
+
+    <div class="law reveal">
+      <div class="law-num">
+        <span class="law-num-big">05</span>
+        חוק
+      </div>
+      <div class="law-content">
+        <h4>חוק ה־"and-and".</h4>
+        <p class="law-claim">"לא or — and. לא הימין או השמאל. הימין וגם המרכז וגם הקולות הליברלים שאפשר להניע."</p>
+        <p>לא אכפת למפקד בצה"ל מה הדעות הפוליטיות של החיילים שלו. העיקר שכולם בשביל ישראל. <strong>זו תורת לחימה צה"לית במהותה: לתקוף בכל הזירות במקביל, לא להשאיר זירה לא מטופלת</strong>. מי שמסוגל ומוכן לדבר בעדנו — הוא נכס, נקודה.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Liberal Voices Showcase -->
+  <div class="liberal-voices-header reveal">
+    <h3>הקולות הלא־צפויים — נכס בעל ROI גבוה במיוחד.</h3>
+    <p>מבחר חלקי של פעילים, עיתונאים ואינטלקטואלים פרו־ישראלים מהמרכז ומהשמאל. <strong style="color: var(--gold);">לא תחליף לבייס — תוספת אסטרטגית בעלת ערך גבוה במיוחד.</strong></p>
+  </div>
+
+  <div class="voices-grid">
+    <div class="voice-cell reveal">
+      <span class="voice-name">בארי וייס</span>
+      <span class="voice-platform">The Free Press · 1.5M מנויים</span>
+      <span class="voice-desc">לסבית, ליברלית, יהודייה־ציונית. הפלטפורמה הליברלית־מתונה החזקה בעולם.</span>
+    </div>
+
+    <div class="voice-cell reveal">
+      <span class="voice-name">סם האריס</span>
+      <span class="voice-platform">Making Sense Podcast · 6M שומעים</span>
+      <span class="voice-desc">פילוסוף סקולרי־ליברלי, אתאיסט. הסברה לאקדמיה ולקהילת ה־Reason.</span>
+    </div>
+
+    <div class="voice-cell reveal">
+      <span class="voice-name">יאיר רוזנברג</span>
+      <span class="voice-platform">The Atlantic</span>
+      <span class="voice-desc">דמוקרט, יהודי־קונסרבטיבי. אחד הפעילים הליברלים החזקים נגד אנטישמיות בקמפוסים.</span>
+    </div>
+
+    <div class="voice-cell reveal">
+      <span class="voice-name">ג'ונתן צ'יט</span>
+      <span class="voice-platform">New York Magazine</span>
+      <span class="voice-desc">דמוקרט, ליברל מובהק. הקול הברור ביותר לטובת ישראל ב־progressive media.</span>
+    </div>
+
+    <div class="voice-cell reveal">
+      <span class="voice-name">בריט סטיבנס</span>
+      <span class="voice-platform">New York Times</span>
+      <span class="voice-desc">מרכז־ימין־מתון, יהודי. עמוד הקול היציב ביותר לישראל ב־NYT.</span>
+    </div>
+
+    <div class="voice-cell reveal">
+      <span class="voice-name">דאגלס מאריי</span>
+      <span class="voice-platform">The Spectator, NY Post</span>
+      <span class="voice-desc">סופר ופובליציסט בריטי. אחד הקולות החזקים ביותר נגד אסלאמיזם ואנטישמיות באירופה.</span>
+    </div>
+  </div>
+
+  <!-- Initiative -->
+  <div class="pluralism-initiative reveal">
+    <div class="pi-card">
+      <div class="label">היוזמה המבצעית — שני אגפים, מטרה אחת</div>
+      <h3>"קואליציית הקשת" — שני אגפים: חיזוק הבייס + הרחבה אסטרטגית.</h3>
+      <p class="pi-mission">"ימין חזק — וגם קולות לא־צפויים. שתי הזירות, באותו זמן, באותו עוצם."</p>
+
+      <p>שני אגפי משנה במטה הלוחמה התודעתית. <strong>אגף הבייס — 25% מהתקציב הכולל</strong> (800 מיליון ש"ח שנתיים): שותפויות עם CFI, GOP, AIPAC, Heritage, AEI, AfD-mainstream, RN-pragmatists, הקהילות האורתודוקסיות. חיזוק והגדלה. <strong>אגף ההרחבה — 10% מהתקציב</strong> (320 מיליון ש"ח שנתיים): פעילות עם דמוקרטים פרו־ישראלים, חברי לייבור פרו־ישראלים, יהדות ליברלית, ופעילים מקצועיים מהמרכז.</p>
+
+      <p>שני האגפים בדרגה זהה. שני ראשי אגפים בכירים. שני תקציבים מוגנים. <strong>שתי זירות. אותה מטרה.</strong></p>
+
+      <div class="pi-pillars">
+        <div class="pi-pillar">
+          <span class="pi-pillar-num">01</span>
+          <span class="pi-pillar-text"><strong>אגף הבייס.</strong> 25% מהתקציב. ראש אגף בכיר עם רקע שמרני־ציוני מוכח.</span>
+        </div>
+        <div class="pi-pillar">
+          <span class="pi-pillar-num">02</span>
+          <span class="pi-pillar-text"><strong>אגף ההרחבה.</strong> 10% מהתקציב. ראש אגף בכיר עם רקע ליברלי־ציוני מוכח.</span>
+        </div>
+        <div class="pi-pillar">
+          <span class="pi-pillar-num">03</span>
+          <span class="pi-pillar-text"><strong>אגף יהדות ליברלית.</strong> Reform, Conservative — בארה"ב, בריטניה, גרמניה, צרפת.</span>
+        </div>
+        <div class="pi-pillar">
+          <span class="pi-pillar-num">04</span>
+          <span class="pi-pillar-text"><strong>אגף קולות מקצועיים.</strong> אקדמאים, עיתונאים, יזמי טק — מכל הקשת.</span>
+        </div>
+        <div class="pi-pillar">
+          <span class="pi-pillar-num">05</span>
+          <span class="pi-pillar-text"><strong>אגף קואליציות מורכבות.</strong> פמיניסטיות, LGBTQ+, סביבה — שמתנגדות לאיסלאמיזם רדיקלי.</span>
+        </div>
+        <div class="pi-pillar">
+          <span class="pi-pillar-num">06</span>
+          <span class="pi-pillar-text"><strong>אגף פוליטי בינלאומי.</strong> שותפויות ארוכות־טווח עם מפלגות שתומכות בנו, מימין ומשמאל.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Structural Protection - מקוצר -->
+  <div class="protection-frame reveal">
+    <div class="protection-card">
+      <div class="pf-label">מנגנון ארגוני בסיסי</div>
+      <h3>איך מבטיחים ששני האגפים פועלים במקביל לאורך זמן?</h3>
+      <p>תקציבים של שני האגפים מוגנים בנפרד. <strong>הסטה ביניהם דורשת אישור ועדת חוץ ובטחון.</strong> דיווח רבעוני על איזון הפעילות. זה הכל. מנגנון פשוט — שמבטיח שהמבנה ישרוד מעבר לכל ראש מערך.</p>
+    </div>
+  </div>
+
+  <!-- Personal note to Hotovely -->
+  <div class="personal-frame reveal">
+    <div class="personal-frame-card">
+      <div class="label">לציפי, על הנקודה הזו</div>
+      <h3>חיזוק הבייס — וגם הרחבה. שתי הזירות במקביל.</h3>
+      <p>הפרק הזה לא מבקש ממך לבחור. <strong>ההפך — הוא מבקש לעשות את שתי הזירות במקביל</strong>. לחזק ולהגדיל את הבייס שלנו עם CFI, GOP, Heritage, ו־AIPAC. ובמקביל — להוסיף אגף שיפעל עם הקולות הלא־צפויים שיכולים לפרוץ קהלים שאחרת אבודים.</p>
+      <p>בלונדון עבדת עם CFI מצד אחד, ובמקביל היו לך גם ערוצים אל ה־Labour Friends of Israel. <strong>זה לא היה ויתור על CFI — זה היה הרחבה של זירת הקרב.</strong> אותו עיקרון בדיוק במאתיים אחוז יותר עומס. <em>לתקוף בכל הזירות במקביל, להלום באויב מכל כיוון, לא להשאיר זירה לא מטופלת.</em></p>
+    </div>
+  </div>
+
+  <div class="pullquote reveal">
+    <p class="pullquote-text">
+      בייס חזק — וגם הרחבה.<br>
+      ימין מאוחד — וגם קולות לא־צפויים.<br>
+      <strong>שתי הזירות. אותה מטרה.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ==================== VI. HOTOVELY-FIT (was V) ==================== -->
+<section id="hotovely-fit" class="body-section hotovely-section">
+  <div class="section-header reveal">
+    <div class="section-num">ו · חמש זרועות מותאמות</div>
+    <h2 class="section-title">חמש זרועות שתפורות לרקע ולסגנון שלך.</h2>
+    <p class="section-lede">לא רעיונות גנריים מספרי לימוד. חמש זרועות שמנצלות את הניסיון הקונקרטי שצברת בלונדון, כשרת תפוצות, וכלוחמת בקמפוסי עילית — מתורגמות למבנה ארגוני.</p>
+  </div>
+
+  <div class="personal-frame reveal">
+    <div class="personal-frame-card">
+      <div class="label">הכלל המארגן</div>
+      <h3>לא ייתכן שמערך ההסברה הלאומי יבזבז את הניסיון הייחודי של ראשת המערך.</h3>
+      <p>חמש שנים בלונדון, מאבק רצוף ב-BBC, ניהול מערכי תפוצות, פעילות בקמפוסים — כל אלה הם מטמון. הזרועות הבאות הופכות אותו מ<em>"ניסיון אישי של אדם אחד"</em> ל<strong>"מבנה לאומי שעובד 24/7"</strong>.</p>
+      <p>השאלה הנכונה אינה "מה לעשות?" — אלא "איך לקחת את מה ש<strong>את</strong> כבר עשית, ולהפוך אותו למוסד לאומי שיעבוד גם כשאת תעברי הלאה?"</p>
+    </div>
+  </div>
+
+  <div class="hotovely-fit-grid">
+
+    <div class="fit-card reveal">
+      <span class="fit-tag">זרוע 01</span>
+      <h3 class="fit-title">חזית BBC ומדיה אנגלוסקסית — מערך לחימה ייעודי.</h3>
+      <p class="fit-rationale">"חמש שנים נלחמת ב-BBC לבד. הגיע הזמן לעשות את זה כמערך."</p>
+      <p class="fit-desc">
+        מטה ייעודי בן 25 איש — מנטר 24/7 את ה-BBC, Sky, ITV, Guardian, NYT, WaPo, Le Monde, Spiegel, El País. <strong>לא רק מנטר — תוקף.</strong> תלונות פורמליות, פניות לרגולטורים (Ofcom, FCC), קמפיינים ציבוריים, חשיפת מקרים בודדים, מכתבי קוראים מתואמים, פעילות מול עורכים ראשיים.
+      </p>
+      <div class="fit-execution">
+        <span class="fit-exec-label">תפעול קונקרטי</span>
+        <div class="fit-exec-item">דאטהבייס תיעוד הטיות עם 5,000 מקרים מתועדים</div>
+        <div class="fit-exec-item">צוות משפטני מדיה בריטים, אמריקאים, גרמנים, צרפתים</div>
+        <div class="fit-exec-item">דוח שנתי "State of Bias" — מתפרסם בכל פלטפורמה</div>
+        <div class="fit-exec-item">קמפיין רגולטורי שנתי בכל מדינה — לפי ביצועים</div>
+      </div>
+    </div>
+
+    <div class="fit-card reveal">
+      <span class="fit-tag">זרוע 02</span>
+      <h3 class="fit-title">מערכה גלובלית לקמפוסי העילית.</h3>
+      <p class="fit-rationale">"פינו אותך מ-LSE. עכשיו את חוזרת — עם תקציב של מיליארד וצוות של 50."</p>
+      <p class="fit-desc">
+        מטה ייעודי לרשת ההשכלה הגבוהה הגלובלית — אוקספורד, קיימברידג', LSE, Ivy League (הרווארד, MIT, ייל, פרינסטון, פן, קולומביה, קורנל, דארטמות', בראון), ה-Russell Group, וג'מעות צרפתיות וגרמניות בולטות. <strong>תפיסה אחת:</strong> הקמפוסים הם תשתית התודעה של הדור הבא של מקבלי החלטות.
+      </p>
+      <div class="fit-execution">
+        <span class="fit-exec-label">תפעול קונקרטי</span>
+        <div class="fit-exec-item">50 כיסאות אקדמיים ממומנים ב-30 אוניברסיטאות</div>
+        <div class="fit-exec-item">קרן ייצוג משפטי לסטודנטים יהודים — בכל המדינות</div>
+        <div class="fit-exec-item">תוכנית "השנה בארץ" — סבסוד 5,000 סטודנטים לשנה</div>
+        <div class="fit-exec-item">מסע "Tour the Truth" — 12 דוברי עילית במחזור שנתי</div>
+        <div class="fit-exec-item">קואליציית הנהלות — דקאנים שמתחייבים לאי-אפלייה</div>
+      </div>
+    </div>
+
+    <div class="fit-card reveal">
+      <span class="fit-tag">זרוע 03</span>
+      <h3 class="fit-title">יחידת Lawfare גלובלית.</h3>
+      <p class="fit-rationale">"את משפטנית. ידעת לעשות את זה מול ה-BBC. עכשיו את עושה את זה בכל הזירות."</p>
+      <p class="fit-desc">
+        יחידת לוחמה משפטית בינלאומית — תלונות פורמליות נגד הטיה תקשורתית, רדיפת ארגוני BDS, תביעות סינגולריות נגד מסיתים, אסדרת פלטפורמות חברתיות, פעולה מול מערכות חינוך. <strong>הכלי שאף ארגון פרו-ישראלי לא מנצל בעוצמה הראויה.</strong>
+      </p>
+      <div class="fit-execution">
+        <span class="fit-exec-label">תפעול קונקרטי</span>
+        <div class="fit-exec-item">צוות 30 משפטנים בכירים — 6 שיפוטים משפטיים מרכזיים</div>
+        <div class="fit-exec-item">שותפויות עם Lawfare Project, Brandeis Center, UK Lawyers for Israel</div>
+        <div class="fit-exec-item">מאגר משפטי פתוח — 10,000 פסקי דין רלוונטיים</div>
+        <div class="fit-exec-item">קרן הגנה משפטית לפעילים פרו-ישראליים בעולם</div>
+        <div class="fit-exec-item">דוח ICJ-מקביל — שמתעד את הפרות הזכויות של הצד שכנגד</div>
+      </div>
+    </div>
+
+    <div class="fit-card reveal">
+      <span class="fit-tag">זרוע 04</span>
+      <h3 class="fit-title">מטה תפוצות-עורף.</h3>
+      <p class="fit-rationale">"היית שרת התפוצות. את הראשונה שמבינה שהקהילה היהודית היא לא פאדיחה — היא חזית קרב."</p>
+      <p class="fit-desc">
+        תיאום שיטתי עם 8 קהילות יהודיות מרכזיות — ארה"ב, בריטניה, צרפת, גרמניה, קנדה, אוסטרליה, דרום אפריקה, ארגנטינה. <strong>לא דרך פדרציות בלבד</strong> — דרך מערכים שמגיעים לבית הכנסת, לבית הספר היהודי, לארגוני הסטודנטים. הקהילה היא ה-"oxygen supply" של מאמצי ההסברה.
+      </p>
+      <div class="fit-execution">
+        <span class="fit-exec-label">תפעול קונקרטי</span>
+        <div class="fit-exec-item">8 רכזי קהילות בכירים — מי שמכיר את הקהילה אישית</div>
+        <div class="fit-exec-item">תוכנית הגנה אישית מאנטישמיות לרבנים, מנהיגי קהילה</div>
+        <div class="fit-exec-item">מענקים לבתי ספר יהודיים — הגנה פיזית, תוכן הסברה</div>
+        <div class="fit-exec-item">פסטיבל "תפוצה אחת" — אירוע גלובלי שנתי בירושלים</div>
+        <div class="fit-exec-item">תוכנית "שגרירי קהילה" — 200 צעירי יהדות שמוכשרים</div>
+      </div>
+    </div>
+
+    <div class="fit-card reveal">
+      <span class="fit-tag">זרוע 05</span>
+      <h3 class="fit-title">דוקטרינת "שחרור מודיעין מבוקר".</h3>
+      <p class="fit-rationale">"הסמכות שאת מקבלת לאשר שחרור חומרים מבצעיים — היא הכלי האסטרטגי הייחודי שלך. אף אחד אחר לא יכול."</p>
+      <p class="fit-desc">
+        כראש המערך, את שותפה באיתור חומרים מודיעיניים ומבצעיים שניתן להתיר לפרסום לצורכי הסברה. <strong>זה הכלי החזק ביותר שיש לך</strong> — ואין לאף אחד אחר. דוקטרינה שיטתית: באיזו מהירות, באיזה פורמט, לאילו פלטפורמות, בתיאום עם איזה ערוצי תקשורת.
+      </p>
+      <div class="fit-execution">
+        <span class="fit-exec-label">תפעול קונקרטי</span>
+        <div class="fit-exec-item">פרוטוקול שחרור — 6 רמות סיווג, מהירות תגובה לפי רמה</div>
+        <div class="fit-exec-item">ועדת תיאום עם אמ"ן, מוסד, שב"כ — שבועית</div>
+        <div class="fit-exec-item">פלטפורמת הפצה רב-ערוצית — מוכנה תוך שעות מהאישור</div>
+        <div class="fit-exec-item">3-5 חשיפות אסטרטגיות בכל רבעון — תזמון מתואם</div>
+        <div class="fit-exec-item">מערכת מדידת השפעה לכל חשיפה — שינוי בנרטיב, חשיפה</div>
+      </div>
+    </div>
+
+    <div class="fit-card reveal">
+      <span class="fit-tag">זרוע 06</span>
+      <h3 class="fit-title">קואליציית הימין השמרני העולמי.</h3>
+      <p class="fit-rationale">"השותפים האמיתיים שלך הם Conservative Friends of Israel, GOP, AfD-non-radicals, Reform UK, Le Pen pragmatists. אנחנו לא צריכים את כולם — אנחנו צריכים את השליטים בעוד 5 שנים."</p>
+      <p class="fit-desc">
+        קואליציה גלובלית של מפלגות ימין שמרני, ארגוני think tank ימניים, אישי תקשורת ימניים — שמהווים בסיס תמיכה אסטרטגי במקום שבו הקואליציות הליברליות קרסו. <strong>היכן שהשמרנים בולטים — ישראל זוכה ביתרון של 30-40 נקודות בסקרים.</strong>
+      </p>
+      <div class="fit-execution">
+        <span class="fit-exec-label">תפעול קונקרטי</span>
+        <div class="fit-exec-item">שותפויות פורמליות עם Heritage Foundation, AEI, Hudson, Manhattan Institute</div>
+        <div class="fit-exec-item">תיאום עם CFI, AIPAC-aligned, Republican Jewish Coalition</div>
+        <div class="fit-exec-item">פסטיבל ימין-ישראל שנתי בירושלים — 500 משתתפים בכירים</div>
+        <div class="fit-exec-item">תוכנית מנהיגות צעירה — 100 פוליטיקאים שמרנים צעירים בשנה</div>
+        <div class="fit-exec-item">מימון משותף של תוכן ב-Fox News, GB News, CNews, Bild</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="exploration-section reveal" style="max-width: 980px; margin: 80px auto 0;">
+    <div class="exploration-badge">אופציה לבחינה — לא לביצוע מיידי</div>
+    <p class="ex-title">השלמה אפשרית: זרוע 07 — "פאנל מבקרים מתונים" (גרסה זהירה)</p>
+    <p class="ex-body">
+      רעיון מורכב: מטה ייעוץ חיצוני שכולל גם 2-3 דמויות בעלות ביקורת מתונה אך הוגנת על מדיניות ישראלית. <strong>לא מתנגדים, לא מצדדי שתי-מדינות, לא מבקרי המלחמה</strong> — אלא דמויות כמו פרופ' Walter Russell Mead, Bret Stephens, או דוגלאס מאריי, שמכירים בזכות של ישראל אך מבקרים החלטות ספציפיות.
+      <br><br>
+      <strong>היגיון הרעיון:</strong> מסר שעובר דרך מבקר מתון מקבל אמינות גבוהה יותר אצל קהל מסופק. <em>זה לא אדומי פנימי — זה כלי לקול שמרני אותנטי.</em>
+      <br><br>
+      <strong>סיבה לבחינה ולא לביצוע מיידי:</strong> דורש בחירת דמויות זהירה במיוחד. ביצוע גרוע יזיק יותר משיועיל. מומלץ פיילוט שקט של 6 חודשים עם 2 דמויות בלבד, לפני החלטה על הרחבה.
+    </p>
+  </div>
+
+  <div class="exploration-section reveal" style="max-width: 980px; margin: 30px auto 0;">
+    <div class="exploration-badge">המהלך המומלץ — שותפות בין-משרדית</div>
+    <p class="ex-title">פלטפורמת בידור — בשותפות עם משרד התרבות (פרק ח')</p>
+    <p class="ex-body">
+      פרק ח' במסמך מתאר תוכנית לפלטפורמת בידור ישראלית בקנה מידה בינלאומי. <strong>בנוסח החדש — לא הקמת אימפריה לבד, אלא שיתוף פעולה כלל-ממשלתי עם משרד התרבות.</strong>
+      <br><br>
+      <strong>למה זה הנכון:</strong> בידור הוא תפקידו הטבעי של משרד התרבות. תקשורת אסטרטגית היא תפקידו של מטה הלוחמה התודעתית. <em>שני המשרדים יחד — מימון משותף, ניהול משותף, תוצאות משותפות.</em> זה גם פוליטית עדין יותר, גם תפעולית פשוט יותר, וגם משדר לציבור שזה מהלך כלל-ממשלתי.
+      <br><br>
+      <strong>מומלץ:</strong> לאשר את 9 שירותי המעטפת המיידית לשחקנים (מענקים, אבטחה, ייצוג). לפנות לשרת התרבות בחודש הראשון לדיון על שותפות לטווח ארוך.
+    </p>
+  </div>
+
+  <div class="pullquote reveal">
+    <p class="pullquote-text">
+      את לא נכנסת לתפקיד —<br>
+      את <strong>נכנסת למבנה</strong> שמנצל<br>
+      כל יום שעשית בלונדון.
+    </p>
+  </div>
+</section>
+
+<!-- ==================== VII. EXISTING ARMY (was VI) ==================== -->
+<section id="existing" class="body-section" style="background: linear-gradient(180deg, var(--ink), var(--ink-2) 50%, var(--ink));">
+  <div class="section-header reveal">
+    <div class="section-num">ז · חזית הקיימים</div>
+    <h2 class="section-title">הצבא שכבר נלחם — ולא נתמך.</h2>
+    <p class="section-lede">לפני שתגייס שגריר חדש אחד — תכיר באלפים שכבר נלחמים. בלי תקציב. בלי גיבוי. בלי שינה.</p>
+  </div>
+
+  <div class="army-intro reveal">
+    <p>כשתעשייני התקשורת חלמו על "צבא משפיענים", הם כבר היו בשטח. אלפי ישראלים, יהודים בתפוצות, וידידי ישראל פעילים מדי לילה ב־X, טיקטוק, רדיט, יוטיוב וטוויץ' — מתרגמים, מאמתים, מתעמתים, נלחמים בזיופים. <strong>על חשבונם.</strong> ההסברה הקלאסית רואה בהם "מתנדבים" — תוספת חביבה. הם לא תוספת — הם <strong>חזית הקרב הראשונה</strong>, ומגיע להם תשתית של מערך לחימה. (חלק מזה כבר בא לידי ביטוי במודל המילואים התקשורתיים בפרק ד'.)</p>
+  </div>
+
+  <div class="army-stat-row reveal">
+    <div class="army-stat">
+      <span class="army-stat-num">15K+</span>
+      <span class="army-stat-label">פעילים ישראליים פעילים מדי שבוע<br>במערכה הציבורית הדיגיטלית</span>
+    </div>
+    <div class="army-stat">
+      <span class="army-stat-num">0</span>
+      <span class="army-stat-label">תקציב מערכתי קיים<br>לתמיכה בפעילות שלהם</span>
+    </div>
+    <div class="army-stat">
+      <span class="army-stat-num">73%</span>
+      <span class="army-stat-label">מהפעילים מדווחים על שחיקה,<br>איומים, או חסימת חשבון</span>
+    </div>
+  </div>
+
+  <div class="typology-header reveal">
+    <h3>מי הם? שש קטגוריות, נכס אחד.</h3>
+    <p>טיפולוגיה של המערך הקיים. כל קטגוריה דורשת תמיכה שונה — אבל כולן זקוקות לתשתית.</p>
+  </div>
+
+  <div class="typology">
+    <div class="typo-cell reveal">
+      <span class="typo-tag">01</span>
+      <h4 class="typo-name">לוחמי X / טוויטר</h4>
+      <p class="typo-desc">מאות פעילים שמגיבים לכל אירוע, מתרגמים, מפצחים, מתעמתים — בעיקר בשעות שאחרים ישנים. הזירה הקלאסית של "המלחמה הזעירה".</p>
+    </div>
+
+    <div class="typo-cell reveal">
+      <span class="typo-tag">02</span>
+      <h4 class="typo-name">יוצרי טיקטוק ורילס</h4>
+      <p class="typo-desc">דור צעיר של ישראלים ויהודים בתפוצות שיודעים לדבר עם דור Z בשפה שלו. החזית החשובה ביותר לקהל מתחת ל־25.</p>
+    </div>
+
+    <div class="typo-cell reveal">
+      <span class="typo-tag">03</span>
+      <h4 class="typo-name">מאמתים ומתרגמים</h4>
+      <p class="typo-desc">מומחים שחושפים זיופים, מנתחים פוטאז', מתרגמים ערבית. עבודה שדורשת מומחיות אמיתית — ולא מקבלת תקציב.</p>
+    </div>
+
+    <div class="typo-cell reveal">
+      <span class="typo-tag">04</span>
+      <h4 class="typo-name">פעילי קמפוס</h4>
+      <p class="typo-desc">סטודנטים יהודים וישראלים שנלחמים בקמפוסים, מתמודדים עם הצקות, ולעיתים גם איומים פיזיים. מקבלים מינימום תמיכה.</p>
+    </div>
+
+    <div class="typo-cell reveal">
+      <span class="typo-tag">05</span>
+      <h4 class="typo-name">המגיבים האנונימיים</h4>
+      <p class="typo-desc">חיילים, אנשי ביטחון, אנשי מקצוע שלא יכולים לחשוף זהות — אבל מנהלים חשבונות פעילים מאחורי כיסוי. תת־מנוצלים.</p>
+    </div>
+
+    <div class="typo-cell reveal">
+      <span class="typo-tag">06</span>
+      <h4 class="typo-name">ידידי ישראל לא־יהודים</h4>
+      <p class="typo-desc">חוקרים, עיתונאים, פעילים — שלוקחים פגיעה ציבורית ומקצועית על עמדה פרו־ישראלית. הקבוצה החשובה ביותר. גם הכי לא־מטופלת.</p>
+    </div>
+  </div>
+
+  <div class="services-header reveal">
+    <h3>מה הם צריכים — ומה אנחנו לא נותנים.</h3>
+    <p>מערכת שירות שתופכת את "המתנדבים" למערך לחימה מקצועי. לא מחליפה — מצמיחה.</p>
+  </div>
+
+  <div class="services">
+    <div class="service reveal">
+      <div class="service-name">חמ"ל הגנה משפטית <span class="num">01</span></div>
+      <div class="service-desc">
+        צוות עורכי דין בכוננות 24/7. ייצוג בחינם. קרן הגנה משפטית. שותפויות עם ארגוני זכויות אזרח גלובליים.
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-name">שחזור חשבונות <span class="num">02</span></div>
+      <div class="service-desc">
+        קו ישיר אל Trust &amp; Safety של כל פלטפורמה. צוות סייבר לשחזור. גיבוי תוכן אוטומטי. הגנה דיגיטלית מתקפת.
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-name">בנק תוכן מאומת <span class="num">03</span></div>
+      <div class="service-desc">
+        פלטפורמה סגורה עם פוטאז' מאומת, תרגומים מקצועיים, נתונים עדכניים, "talking points" לכל אירוע — בזמן אמת.
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-name">קרן בריאות הנפש <span class="num">04</span></div>
+      <div class="service-desc">
+        מטפלים מתמחים בעבודה עם פעילי רשת. קבוצות תמיכה אנונימיות. מימון טיפול. ימי התרעננות מסובסדים.
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-name">אקדמיה ללוחמה רטורית <span class="num">05</span></div>
+      <div class="service-desc">
+        אקדמיה דיגיטלית פתוחה — קורסים על אלגוריתמים, רטוריקה, וידאו, התמודדות עם איומים. סדנאות בישראל ובחו"ל.
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-name">שירות הפקה <span class="num">06</span></div>
+      <div class="service-desc">
+        צוות הפקה מרכזי שלוקח רעיון של פעיל והופך אותו לתוכן ברמת הפקה גבוהה. עורכים, מעצבים, צלמים.
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-name">רשת תיאום סמויה <span class="num">07</span></div>
+      <div class="service-desc">
+        פלטפורמה מאובטחת לתיאום כללי — מוקדי דחיפה, נושאים בעדיפות, פעילים זמינים. תיאום הזדמנויות, לא דעות.
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-name">קרן יוצר־אסטרטגי <span class="num">08</span></div>
+      <div class="service-desc">
+        מענקי יצירה ל־500 פעילים מובילים. לא משכורת — מענק שמכיר ביצירה כעבודה. תקצוב לפי השפעה נמדדת.
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-name">הכרה לאומית <span class="num">09</span></div>
+      <div class="service-desc">
+        אות הוקרה ראש הממשלה לפעילים בולטים. תוכנית "שגרירי הקול" — תואר, הטבות מס, גישה למשרדים.
+      </div>
+    </div>
+  </div>
+
+  <div class="pullquote reveal">
+    <p class="pullquote-text">
+      אסור לבזבז שקל אחד על גיוס משפיען חדש<br>
+      לפני שטיפלנו ב<strong>אלפים שכבר בשטח</strong>.<br>
+      זו ההשקעה עם ההחזר הגבוה ביותר במשרד כולו.
+    </p>
+  </div>
+</section>
+
+<!-- ==================== VIII. PERFORMER CORPS (was VII) ==================== -->
+<section id="performers" class="body-section performer-section">
+  <div class="section-header reveal">
+    <div class="section-num">ח · כוח השחקנים</div>
+    <h2 class="section-title">השגרירים שלא שאלנו אם הם רוצים את המשרה.</h2>
+    <p class="section-lede">בעוד הוליווד מסירה אותם מהקאסטינג, מיליוני אוהדים שלהם נשארים מקשיבים. זה הזמן לבנות סביבם פלטפורמה — לא ציפייה.</p>
+  </div>
+
+  <div class="performer-intro reveal">
+    <p>כל יום מאז 7 באוקטובר, שחקנית הוליוודית, זמרת בריטית, או יוצר נטפליקס מאבדים סוכן, תפקיד, פולואר. הם לא נלחמו — הם פרסמו ציוץ אחד שאמר <em>"אני עומדת לצד ישראל"</em>. מדובר בקטגוריה קטנה, ידועה, ויקרת ערך — בין 50 ל־200 איש בעולם כולו. <strong>חמישים איש שאי אפשר להחליף</strong>, כי לכל אחד מהם יש מה שלאף קמפיין הסברה אין: קהל בנוי, אהדה רגשית, ויכולת לדבר אל אנשים שלעולם לא יקראו דו"ח רשמי.</p>
+
+    <p>ובכל זאת — אין בישראל אגף, מסגרת, או אסטרטגיה לטפל בהם. הם נופלים, ואנחנו צופים. <strong>השחקן־השגריר הוא נכס אסטרטגי לאומי.</strong> ככזה — חייב מערך תמיכה בקנה מידה אסטרטגי לאומי. לא חיבוקים. לא תעודות הוקרה. תשתית.</p>
+  </div>
+
+  <div class="spotlight-quote reveal">
+    <div class="spotlight-quote-label">— הרעיון המרכזי —</div>
+    <p class="spotlight-quote-text">
+      שחקן שמדבר בעד ישראל מאבד תפקיד.<br>
+      שחקן שמדבר בעד ישראל ומקבל גיבוי מישראל —<br>
+      <strong>מקבל קריירה חדשה.</strong>
+    </p>
+  </div>
+
+  <div class="typology-header reveal">
+    <h3>למה זה ענף נפרד מ"חזית הקיימים"?</h3>
+    <p>חזית הקיימים מטפלת בפעיל הרשת. כוח השחקנים מטפל בנכס המותג. שני עולמות. שני מערכי שירות.</p>
+  </div>
+
+  <div class="differentiators">
+    <div class="diff-cell reveal">
+      <span class="diff-num">01</span>
+      <h4 class="diff-name">קהל בנוי</h4>
+      <p class="diff-desc">פעיל רגיל מתחיל מאפס בכל אירוע. שחקן בא עם 2.4 מיליון עוקבים שכבר אוהבים אותו. הקהל לא נכבש — הוא קיים.</p>
+    </div>
+
+    <div class="diff-cell reveal">
+      <span class="diff-num">02</span>
+      <h4 class="diff-name">אמינות לא־פוליטית</h4>
+      <p class="diff-desc">המעריצים שלהם באו בשביל אומנות, לא בשביל פוליטיקה. כשהם מדברים על ישראל — זה מגיע לאוזניים שסגורות לכל קמפיין רשמי.</p>
+    </div>
+
+    <div class="diff-cell reveal">
+      <span class="diff-num">03</span>
+      <h4 class="diff-name">כשרון הופעה</h4>
+      <p class="diff-desc">הם יודעים לדבר למצלמה. הם מבינים תזמון, פאתוס, רטוריקה. אלה כישורים שלוקחים עשור ללמוד — והם כבר מומחים בהם.</p>
+    </div>
+
+    <div class="diff-cell reveal">
+      <span class="diff-num">04</span>
+      <h4 class="diff-name">הקרבה גלויה</h4>
+      <p class="diff-desc">כשהם משלמים מחיר, כולם רואים. תפקידים שנקרעים. פרסים שנמחקים. סוכנים שעוזבים. ההקרבה הופכת אותם לאמינים יותר, לא פחות.</p>
+    </div>
+
+    <div class="diff-cell reveal">
+      <span class="diff-num">05</span>
+      <h4 class="diff-name">רשת תעשייה</h4>
+      <p class="diff-desc">לכל שחקן יש מאות קשרים מקצועיים — שחקנים אחרים, מפיקים, סוכנים, עיתונאי בידור. רשת השפעה אופקית רחבה ועמוקה.</p>
+    </div>
+
+    <div class="diff-cell reveal">
+      <span class="diff-num">06</span>
+      <h4 class="diff-name">חוסן תחת לחץ</h4>
+      <p class="diff-desc">שחקן הוליוודי מתורגל בהתמודדות עם תקשורת עוינת, אינטרנט מוערפל, וטוויטר חולה. הם לא נשברים בלחץ. הם בנויים לזה.</p>
+    </div>
+  </div>
+
+  <div class="price-tag">
+    <div class="price-header reveal">
+      <h3>המחיר שהם משלמים — שמדינת ישראל לא רואה.</h3>
+      <p>שש קטגוריות של פגיעה אישית, מקצועית וכלכלית. סטטוס: היום, אפס מערך מענה.</p>
+    </div>
+
+    <div class="prices">
+      <div class="price-item reveal">
+        <span class="price-num">01</span>
+        <div class="price-content">
+          <h4>קריירה</h4>
+          <p>תפקידים שנשללים, סוכנים שעוזבים. ירידה ממוצעת של 40-60% בהצעות עבודה תוך שנה.</p>
+        </div>
+      </div>
+
+      <div class="price-item reveal">
+        <span class="price-num">02</span>
+        <div class="price-content">
+          <h4>הכנסה</h4>
+          <p>חוזי פרסום נקרעים, פלטפורמות מורידות אלגוריתם. ירידה אמיתית של עד 70%.</p>
+        </div>
+      </div>
+
+      <div class="price-item reveal">
+        <span class="price-num">03</span>
+        <div class="price-content">
+          <h4>חברה מקצועית</h4>
+          <p>קולגות שמתעלמים, מסיבות שלא מזמינים, בידוד חברתי שאף אחד לא מודה בו.</p>
+        </div>
+      </div>
+
+      <div class="price-item reveal">
+        <span class="price-num">04</span>
+        <div class="price-content">
+          <h4>משפחה</h4>
+          <p>ילדים שמוצקים בבית הספר, בני זוג שמקבלים איומים. עומס משפחתי שלא נספר במשכורת.</p>
+        </div>
+      </div>
+
+      <div class="price-item reveal">
+        <span class="price-num">05</span>
+        <div class="price-content">
+          <h4>ביטחון פיזי</h4>
+          <p>איומים אמיתיים, סטוקרים, לעיתים תקיפות. אבטחה — בכיס שלהם, אם בכלל.</p>
+        </div>
+      </div>
+
+      <div class="price-item reveal">
+        <span class="price-num">06</span>
+        <div class="price-content">
+          <h4>בריאות נפשית</h4>
+          <p>חשיפה יומית למאות הודעות שנאה. שיעורי דיכאון ופוסט־טראומה גבוהים.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="platform-pivot reveal">
+    <span class="platform-tag">המהלך הריאליסטי</span>
+    <h3>שיתוף פעולה עם משרד התרבות <em>—</em> במימון משותף.</h3>
+    <p class="platform-statement">לא לבנות סטודיו לבד. לחבר זרועות.</p>
+
+    <p>הרעיון הרגיל הוא להגן: לבקש מהוליווד לסלוח, לרכוש כיסוי תקשורתי, לחכות שהסערה תחלוף. <strong>זה רעיון קצת מביך.</strong></p>
+
+    <p>הרעיון החדש הוא הפוך: <strong>לחבור למשרד התרבות במימון משותף לפלטפורמת בידור ישראלית בקנה מידה בינלאומי</strong>. תקצוב משותף — חצי ממשרד התרבות (תפקידו הטבעי), חצי ממטה הלוחמה התודעתית (כעניין אסטרטגי). שיתוף פעולה כלל-ממשלתי. זה גם נכון פוליטית — מהלך כזה דורש איגום משאבים, לא הקמת אימפריה.</p>
+
+    <p>שחקן שזרקו אותו מסטודיו אחד בלוס אנג'לס יחזור הביתה ככוכב של סדרה ישראלית-בינלאומית, מופצת בנטפליקס ב-190 מדינות. <em>הופך מקורבן — לסמל. מהפסד — לניצחון.</em></p>
+
+    <div class="platform-pillars">
+      <div class="pillar">
+        <span class="pillar-num">01</span>
+        <span class="pillar-text"><strong>שותפות עם משרד התרבות.</strong> מימון משותף, ניהול משותף, תוצאות משותפות.</span>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">02</span>
+        <span class="pillar-text"><strong>סוכנות אומנים בינלאומית בישראל.</strong> ייצוג מקצועי לשחקנים שאיבדו ייצוג. מבנה מסחרי בעיקר.</span>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">03</span>
+        <span class="pillar-text"><strong>קרן הפקה לסדרות מקור.</strong> 6-8 סדרות בינלאומיות בשנה בכוכבי השחקנים-שגרירים.</span>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">04</span>
+        <span class="pillar-text"><strong>פסטיבל בידור בינלאומי.</strong> "Jerusalem Premiere" — מקבילה ישראלית לסאנדנס. מוקד תעשייה גלובלי.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="perf-services-header reveal">
+    <h3>תשעה שירותי מעטפת — היום, לא בעוד שנה.</h3>
+    <p>בנפרד ממהלך הפלטפורמה ארוכה־הטווח, נדרשת מעטפת שירות מיידית. אקטיבית מהיום הראשון.</p>
+  </div>
+
+  <div class="perf-services">
+    <div class="perf-service reveal">
+      <div class="perf-service-name">מענק מחליף־תפקיד <span class="num">01</span></div>
+      <div class="perf-service-desc">
+        מענק חודשי שמכסה הכנסה אבודה למשך עד 24 חודשים. גובה לפי השפעה רשתית מוכחת. מנוהל על ידי ועדה בלתי תלויה.
+      </div>
+    </div>
+
+    <div class="perf-service reveal">
+      <div class="perf-service-name">צוות PR משברי <span class="num">02</span></div>
+      <div class="perf-service-desc">
+        צוות PR בינלאומי בכוננות — דובר אישי, אסטרטג מסרים, ניהול תקשורת רב־ערוצי. עד 6 שחקנים פעילים בו זמנית.
+      </div>
+    </div>
+
+    <div class="perf-service reveal">
+      <div class="perf-service-name">חבילת אבטחה אישית <span class="num">03</span></div>
+      <div class="perf-service-desc">
+        הערכת איומים על ידי שב"כ. אבטחה צמודה במצבי משבר. ביטוח חיים מורחב לבני משפחה. שירותים גם בחו"ל.
+      </div>
+    </div>
+
+    <div class="perf-service reveal">
+      <div class="perf-service-name">סוכנות ייצוג חלופית <span class="num">04</span></div>
+      <div class="perf-service-desc">
+        סוכנות ישראלית עם נציגויות בלוס אנג'לס, לונדון, מומבאי. בעלות פרטית בחלקה, גיבוי ממשלתי בחלקה. ייצוג מקצועי מלא.
+      </div>
+    </div>
+
+    <div class="perf-service reveal">
+      <div class="perf-service-name">בנק תפקידים בכוננות <span class="num">05</span></div>
+      <div class="perf-service-desc">
+        8-12 הפקות בכל רגע נתון בשלבי שונים. שחקן שצריך עבודה מקבל תפקיד תוך 30 ימים. הפקות איכותיות, לא הומניטריות.
+      </div>
+    </div>
+
+    <div class="perf-service reveal">
+      <div class="perf-service-name">בריאות הנפש פרימיום <span class="num">06</span></div>
+      <div class="perf-service-desc">
+        מטפלים בכירים שעובדים עם שחקני הוליווד, מומחי טראומה, פסיכיאטרים. עד 3 פגישות שבועיות, ללא תשלום.
+      </div>
+    </div>
+
+    <div class="perf-service reveal">
+      <div class="perf-service-name">קהילת עמיתים <span class="num">07</span></div>
+      <div class="perf-service-desc">
+        מועדון סגור, אנונימי, בינלאומי — אך מחובר. מפגשים תקופתיים בישראל, קבוצות תמיכה. הם מוצאים אחד את השני.
+      </div>
+    </div>
+
+    <div class="perf-service reveal">
+      <div class="perf-service-name">דובר אישי לזירה ישראלית <span class="num">08</span></div>
+      <div class="perf-service-desc">
+        דובר־מתאם אישי בישראל לכל שחקן בקטגוריה — מתאם הופעות, ראיונות, פגישות. ממקסם השפעה.
+      </div>
+    </div>
+
+    <div class="perf-service reveal">
+      <div class="perf-service-name">תקציב הפקה אישי <span class="num">09</span></div>
+      <div class="perf-service-desc">
+        מענקי הפקה לסרטים, סדרות דוקו, מיני־סדרות שהשחקן יוזם. שליטה אומנותית מלאה לשחקן. הישראלים מממנים, לא מכתיבים.
+      </div>
+    </div>
+  </div>
+
+  <div class="spotlight-quote reveal" style="margin-top: 30px;">
+    <div class="spotlight-quote-label">— ההפך מ"חמלה" —</div>
+    <p class="spotlight-quote-text">
+      אנחנו לא מצילים אותם.<br>
+      אנחנו <strong>בונים איתם</strong> את התשתית<br>
+      שתחליף את הוליווד תוך עשור.
+    </p>
+  </div>
+</section>
+
+<!-- ==================== IX. INITIATIVES (was VIII) -->
+<section id="initiatives" class="body-section">
+  <div class="section-header reveal">
+    <div class="section-num">ט · יוזמות הליבה</div>
+    <h2 class="section-title">אחת־עשרה תוכניות עבודה.</h2>
+    <p class="section-lede">כל אחת ניתנת להשקה תוך 90 ימים. ביחד — מערך שלם של נשק רך.</p>
+  </div>
+
+  <div class="initiatives">
+    <div class="initiative reveal">
+      <div class="init-num">01</div>
+      <div class="init-title">"קול ישראל 2.0" — רשת היוצרים</div>
+      <div class="init-desc">5,000 יוצרי תוכן בעולם — יהודים, ידידי ישראל, סקרנים. מימון, הכשרה, גישה. מודל Patreon הפוך — המשרד משלם לתוכן הטוב. מדידה לפי הגעה, לא לפי כותרות.</div>
+    </div>
+
+    <div class="initiative reveal">
+      <div class="init-num">02</div>
+      <div class="init-title">"Israel Open" — שקיפות רדיקלית</div>
+      <div class="init-desc">דשבורד פתוח: כמה סיוע הומניטרי עבר לעזה, מצב חטופים בזמן אמת, נפגעים צה"ליים, אומדן עצמאי לנפגעים פלסטיניים. מי שמספק את הנתונים — מנצח באמינות.</div>
+    </div>
+
+    <div class="initiative reveal">
+      <div class="init-num">03</div>
+      <div class="init-title">"חזית התרבות" — דיפלומטיה רכה</div>
+      <div class="init-desc">100 שפים, 50 מוזיקאים, 30 קומיקאים, 20 מותגי טכנולוגיה — שגרירים בלי תווית. מסע מתמשך בעולם. ישראל כתרבות, לא כסכסוך.</div>
+    </div>
+
+    <div class="initiative reveal">
+      <div class="init-num">04</div>
+      <div class="init-title">"שדה הלוחם" — מיליון מבקרים</div>
+      <div class="init-desc">סבסוד נסיעות לישראל ל־100,000 סטודנטים, 5,000 עיתונאים, 10,000 משפיענים בשנה. רואים — מספרים. מודל Birthright × 10. הכלי הפסיכולוגי החזק ביותר שיש לנו.</div>
+    </div>
+
+    <div class="initiative reveal">
+      <div class="init-num">05</div>
+      <div class="init-title">"7.10 — ארכיון התודעה"</div>
+      <div class="init-desc">ארכיון דיגיטלי בקנה מידה מוזיאוני — 8 שפות, VR, AI, ראיונות, פוטאז' מאומת. עולה לאוויר תוך 12 חודש. הופך למקור הקנוני בעולם — כמו Yad Vashem לדור הזה.</div>
+    </div>
+
+    <div class="initiative reveal">
+      <div class="init-num">06</div>
+      <div class="init-title">"ישראלים אמיתיים" — קמפיין הפנים</div>
+      <div class="init-desc">לא דוברים, לא פוליטיקאים. פצועי לחימה. נשות מילואים. ערבים־ישראלים. דרוזים. חסידים. להט"בים. חוקרים. חקלאים. הפנים של מדינה אמיתית — לא של תעמולה.</div>
+    </div>
+
+    <div class="initiative reveal">
+      <div class="init-num">07</div>
+      <div class="init-title">"פאנל המבקרים המתונים"</div>
+      <div class="init-desc">פאנל קטן של 2-3 דמויות מתונות (Bret Stephens, Walter Russell Mead) שמקבלים גישה רשמית ובמה. הם בוחנים מדיניות בפומבי, אנחנו עונים בכבוד. בונה אמון דרך פתיחות לביקורת. פיילוט שקט של 6 חודשים לפני הרחבה.</div>
+    </div>
+
+    <div class="initiative reveal">
+      <div class="init-num">08</div>
+      <div class="init-title">"מטה ההסברה הצעירה"</div>
+      <div class="init-desc">לפני שהם מגיעים לקמפוס — להגיע אליהם בתיכון. תוכניות ב־200 בתי ספר תיכוניים בארה"ב, אנגליה, צרפת, גרמניה. למידה על ישראל לפני שהאוניברסיטה תעוות.</div>
+    </div>
+
+    <div class="initiative reveal">
+      <div class="init-num">09</div>
+      <div class="init-title">"הקול הערבי־ישראלי"</div>
+      <div class="init-desc">השמעה מערכתית של דרוזים, בדואים, ערבים־ישראלים, נוצרים. אגף ייעודי, תקציב ייעודי, יוצרים ייעודיים. הנכס הלא־מנוצל הגדול ביותר שלנו.</div>
+    </div>
+
+    <div class="initiative reveal">
+      <div class="init-num">10</div>
+      <div class="init-title">"הקרן לדוקומנטרי"</div>
+      <div class="init-desc">100 סרטי תעודה ב־5 שנים. לא תעמולה — סיפורים אמיתיים מורכבים. נטפליקס, HBO, Apple TV. מצמיח עומק תרבותי שלא מתפוגג עם מחזור החדשות הבא.</div>
+    </div>
+
+    <div class="initiative reveal">
+      <div class="init-num">11</div>
+      <div class="init-title">קואליציית האנטי־טוטליטריזם</div>
+      <div class="init-desc">ישראל מובילה קואליציה גלובלית של דמוקרטיות מאוימות — מהונג קונג ועד אוקראינה, מאיראנים בגלות ועד דיסידנטים סינים. ממתגים את עצמנו כיהלום בכתר העולם החופשי.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== X. SURPRISES (was IX) ==================== -->
+<section id="surprises" class="body-section">
+  <div class="section-header reveal">
+    <div class="section-num">י · המהלכים המפתיעים</div>
+    <h2 class="section-title">שישה מהלכים שאף אחד לא מצפה.</h2>
+    <p class="section-lede">דברים שיגרמו לעיתונאים, ליריבים, ולשגרירויות זרות לעצור ולשאול: "מה הם עושים שם?"</p>
+  </div>
+
+  <div class="surprises">
+    <div class="surprise reveal">
+      <div class="surprise-num">01</div>
+      <div class="surprise-content">
+        <h4>גיוס סוכנות פרסום עולמית — לא ישראלית.</h4>
+        <p>Wieden+Kennedy, Droga5, BBH. תקציב 200 מיליון דולר לשנה. הם יודעים יותר מאיתנו על איך מוכרים סיפור. הגאווה תזרוק שקלים — הצניעות תקנה תודעה.</p>
+      </div>
+    </div>
+
+    <div class="surprise reveal">
+      <div class="surprise-num">02</div>
+      <div class="surprise-content">
+        <h4>AI Avatars של ניצולי שואה ועדויות 7.10.</h4>
+        <p>עדות בעברית, אנגלית, ערבית, ספרדית, מנדרינית — 24/7, נגישה לתלמידים בכל העולם. כי האנשים האמיתיים נעלמים, והעדות חייבת להישאר חיה.</p>
+      </div>
+    </div>
+
+    <div class="surprise reveal">
+      <div class="surprise-num">03</div>
+      <div class="surprise-content">
+        <h4>"חוויית VR" של מנהרות חמאס.</h4>
+        <p>קונגרס בארה"ב. פרלמנטים בעולם. אוניברסיטאות הליגה. אדם שעבר את החוויה — לא חושב כפי שחשב לפני. אין קמפיין מילים שמשתווה.</p>
+      </div>
+    </div>
+
+    <div class="surprise reveal">
+      <div class="surprise-num">04</div>
+      <div class="surprise-content">
+        <h4>"חאקתון לחימה נרטיבית" — 50 מיליון דולר פרס.</h4>
+        <p>הקול שמגיע לקהל הרחב ביותר — נמדד אובייקטיבית — מנצח. מגלה כשרונות שלא ידענו על קיומם. ממתג את ישראל כמדינה ש<em>קונה רעיונות</em>, לא ש<em>רושמת אותם</em>.</p>
+      </div>
+    </div>
+
+    <div class="surprise reveal">
+      <div class="surprise-num">05</div>
+      <div class="surprise-content">
+        <h4>שגרירי קומדיה.</h4>
+        <p>ארץ נהדרת באנגלית. גוטמן בנטפליקס. אדיר מילר בלונדון. הקומדיה הישראלית — ערוץ עולמי, הפקות מקור. הצחוק בורא קרבה שאף נאום לא יוצר.</p>
+      </div>
+    </div>
+
+    <div class="surprise reveal">
+      <div class="surprise-num">06</div>
+      <div class="surprise-content">
+        <h4>קואליציית הקהל הגלובלי — מטריה אחת.</h4>
+        <p>50 קהילות פזורה — יהודים, ארמנים, יזידים, כורדים, איראנים בגלות, אסירים פוליטיים סינים. כולם מתחת למטריה אחת: <em>"החופש מתחיל בכבוד לזיכרון"</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== XI. THREE HORIZONS (was X) -->
+<section id="horizons" class="body-section" style="background: linear-gradient(180deg, var(--ink), var(--ink-2) 30%, var(--ink-2) 70%, var(--ink));">
+  <div class="section-header reveal">
+    <div class="section-num">יא · שלושת האופקים</div>
+    <h2 class="section-title">מ־90 ימים ל־5 שנים. מסלול עבודה אחד.</h2>
+    <p class="section-lede">ההתחייבות הראשונה — בתוך 90 יום. הבסיס הניהולי — בתוך שנה. הבית הקבוע — בתוך 5 שנים.</p>
+  </div>
+
+  <div class="horizons">
+    <p class="horizons-intro reveal">
+      אסטרטגיה בלי ציר זמן היא רשימת משאלות.<br>
+      הנה ציר הזמן. הנה ההצלחות הנמדדות בכל אופק. הנה מה שלא מתפשר.
+    </p>
+
+    <div class="horizons-grid">
+
+      <div class="horizon reveal">
+        <span class="horizon-tag">אופק I</span>
+        <span class="horizon-period">0 — 90 ימים</span>
+        <h3 class="horizon-title">הבזק ההכרזה.</h3>
+        <p class="horizon-mission">המטרה: להוכיח לעולם, לפעילים הקיימים, ולממסד עצמו — שהמשרד התעורר. ההישג הראשון חייב להיות נראה לעין.</p>
+
+        <div class="horizon-actions">
+          <div class="horizon-action">שינוי שם רשמי של המשרד — אירוע תקשורת.</div>
+          <div class="horizon-action">מינוי ראש אגף בדרגת מנכ"ל ביטחוני.</div>
+          <div class="horizon-action">פתיחת חמ"ל זמן אמת — 30 איש, קומת הניטור והמודיעין.</div>
+          <div class="horizon-action">השקת חמ"ל הגנה משפטית לפעילים — שירות חינם 24/7.</div>
+          <div class="horizon-action">חוזה ראשוני עם 3 סוכנויות פרסום עולמיות.</div>
+          <div class="horizon-action">השקת בנק תוכן מאומת — בטא לפעילים.</div>
+          <div class="horizon-action">קמפיין השקה גלובלי "Israel: A Different Story".</div>
+        </div>
+
+        <div class="horizon-yield">
+          <span class="yield-label">תוצר נמדד באופק זה</span>
+          הצגה ראשונה לוועדת חוץ ובטחון<br>
+          עם נתונים, לא רטוריקה.
+        </div>
+      </div>
+
+      <div class="horizon reveal">
+        <span class="horizon-tag">אופק II</span>
+        <span class="horizon-period">3 — 12 חודשים</span>
+        <h3 class="horizon-title">בנייה לעומק.</h3>
+        <p class="horizon-mission">המטרה: לבנות את כל המערכים העיקריים. רשת היוצרים, ארכיון 7.10, "Israel Open", מערך השירות לפעילים — כולם מבצעיים ומנצלים תקציב.</p>
+
+        <div class="horizon-actions">
+          <div class="horizon-action">2,000 פעילים פרו־ישראלים מקבלים שירות מהמשרד.</div>
+          <div class="horizon-action">השקת "Israel Open" — דשבורד שקיפות ב־8 שפות.</div>
+          <div class="horizon-action">2,500 יוצרי תוכן ברשת היוצרים — מתוקצבים.</div>
+          <div class="horizon-action">100 מיליון חשיפות חודשיות בתוכן ישראלי.</div>
+          <div class="horizon-action">פתיחת 5 משרדי שטח — NYC, LA, לונדון, ברלין, מומבאי.</div>
+          <div class="horizon-action">200 ראיונות איכות עם פצועי לחימה ומשפחות חטופים.</div>
+          <div class="horizon-action">השקת "אקדמיית לחימה רטורית" — 5,000 בוגרים.</div>
+          <div class="horizon-action">השקת חוויית VR של מנהרות חמאס בקונגרס האמריקני.</div>
+        </div>
+
+        <div class="horizon-yield">
+          <span class="yield-label">תוצר נמדד באופק זה</span>
+          שיפור של 12 נקודות ב־Sentiment Score<br>
+          ב־5 שווקי יעד מרכזיים.
+        </div>
+      </div>
+
+      <div class="horizon reveal">
+        <span class="horizon-tag">אופק III</span>
+        <span class="horizon-period">1 — 5 שנים</span>
+        <h3 class="horizon-title">בית קבוע, לא מקלט.</h3>
+        <p class="horizon-mission">המטרה: לבנות תשתית שתחיה אחרי הכהונה הזו, אחרי הממשלה הזו, אחרי המלחמה הזו. מערכת ביטחון לאומי שלא תלויה במחזורי בחירות.</p>
+
+        <div class="horizon-actions">
+          <div class="horizon-action">100 דוקומנטרים בנטפליקס, HBO, Apple TV.</div>
+          <div class="horizon-action">5,000 יוצרי תוכן ברשת — תפוצה גלובלית מלאה.</div>
+          <div class="horizon-action">50 כיסאות אקדמיים מומנים ב־30 אוניברסיטאות מובילות.</div>
+          <div class="horizon-action">מיליון מבקרים בישראל בשנה — סבסוד מובנה.</div>
+          <div class="horizon-action">ארכיון 7.10 — מקור קנוני בעולם, מצוטט מ־UN.</div>
+          <div class="horizon-action">200 בתי ספר תיכוניים מובילים בעולם — קוריקולום משלים.</div>
+          <div class="horizon-action">קואליציית האנטי־טוטליטריזם — 30 מדינות חברות.</div>
+          <div class="horizon-action">תרבות ארגונית: כל דיפלומט, מקצין, ושר — דובר תקשורת אסטרטגית.</div>
+        </div>
+
+        <div class="horizon-yield">
+          <span class="yield-label">תוצר נמדד באופק זה</span>
+          שינוי מבני בעמדת ישראל<br>
+          ב־3 מדדים גלובליים מובילים.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== XII. BUDGET (was XI) ==================== -->
+<section id="budget" class="body-section">
+  <div class="section-header reveal">
+    <div class="section-num">יב · תקציב ומבנה</div>
+    <h2 class="section-title">להוציא בקנה מידה של מעצמה רכה.</h2>
+    <p class="section-lede">סעודיה מוציאה 6 מיליארד דולר. קטאר — 5. אנחנו — פחות ממיליארד שקלים. זה לא חיסכון, זו התאבדות אסטרטגית.</p>
+  </div>
+
+  <div class="budget-grid">
+    <div class="reveal">
+      <div class="budget-label">תקציב שנתי מומלץ</div>
+      <div class="budget-headline">3.2<span class="unit">מיליארד ש"ח</span></div>
+      <div class="budget-comparison">
+        <strong>לשם השוואה:</strong> ערב הסעודית מוציאה 6 מיליארד דולר בשנה על Soft Power. קטאר — 5 מיליארד דולר. אנחנו מוציאים פחות ממיליארד שקלים — ומצפים לתוצאות. זה לא חיסכון. זו התאבדות אסטרטגית. אנחנו מתחרים בכבדי משקל בתקציב של פלאפל. זה חייב להיגמר.
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="budget-label">חלוקת תקציב</div>
+      <div class="allocation">
+        <div class="alloc-row"><span class="alloc-pct">25%</span><span class="alloc-name">קואליציית הקשת — אגף הבייס (ימין שמרני)</span></div>
+        <div class="alloc-row"><span class="alloc-pct">15%</span><span class="alloc-name">רשת יוצרים, פלטפורמות</span></div>
+        <div class="alloc-row"><span class="alloc-pct">12%</span><span class="alloc-name">חזית הקיימים — מילואים תקשורתיים</span></div>
+        <div class="alloc-row"><span class="alloc-pct">12%</span><span class="alloc-name">הפקת תוכן (וידאו, אודיו, גרפיקה)</span></div>
+        <div class="alloc-row"><span class="alloc-pct">10%</span><span class="alloc-name">קואליציית הקשת — אגף ההרחבה</span></div>
+        <div class="alloc-row"><span class="alloc-pct">10%</span><span class="alloc-name">חמ"ל זמן אמת, AI, טכנולוגיה</span></div>
+        <div class="alloc-row"><span class="alloc-pct">8%</span><span class="alloc-name">פלטפורמת בידור (כוח השחקנים)</span></div>
+        <div class="alloc-row"><span class="alloc-pct">5%</span><span class="alloc-name">דיפלומטיה תרבותית</span></div>
+        <div class="alloc-row"><span class="alloc-pct">3%</span><span class="alloc-name">מחקר, מדידה, קואליציות</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== XIII. KPIs (was XII) ==================== -->
+<section id="kpis" class="body-section">
+  <div class="section-header reveal">
+    <div class="section-num">יג · מדדי הצלחה</div>
+    <h2 class="section-title">נתונים, לא תחושה.</h2>
+    <p class="section-lede">מדידה רבעונית, גוף חיצוני, שקיפות מלאה לוועדת חוץ ובטחון. בלי מדידה — אין שינוי, יש רק רטוריקה.</p>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 01</div>
+      <div class="kpi-name">Sentiment Score</div>
+      <div class="kpi-detail">תפיסה ציבורית של ישראל ב־15 שווקי יעד — מדידה רבעונית, גוף סקר חיצוני.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 02</div>
+      <div class="kpi-name">Share of Voice</div>
+      <div class="kpi-detail">חלקה של ישראל בשיח על המזרח התיכון ב־5 פלטפורמות מרכזיות — מדידה חודשית.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 03</div>
+      <div class="kpi-name">Reach</div>
+      <div class="kpi-detail">מספר חשיפות חודשי של תוכן הרשת הפרו־ישראלית בעולם — לפי שפה, גיל, גיאוגרפיה.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 04</div>
+      <div class="kpi-name">Time-to-Response</div>
+      <div class="kpi-detail">שעות מאירוע ועד דומיננטיות שלנו בשיחה — יעד: שעה וחצי. מדידה לפי אירוע.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 05</div>
+      <div class="kpi-name">Activist Health Score</div>
+      <div class="kpi-detail">מדד בריאות הפעילים בחזית — שיעור שחיקה, חסימות חשבון, פגיעות. רבעוני.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 06</div>
+      <div class="kpi-name">Conversion Rate</div>
+      <div class="kpi-detail">שינוי בעמדה של מבקרים לאחר ביקור בישראל — מדידה לפני, מיד אחרי, חצי שנה אחרי.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 07</div>
+      <div class="kpi-name">Earned Media Value</div>
+      <div class="kpi-detail">שווי כספי של חשיפה לא ממומנת — מאמרי דעה, סיקור עיתונאי, תוכן יוצרים.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 08</div>
+      <div class="kpi-name">Counter-Narrative Penetration</div>
+      <div class="kpi-detail">חדירת המסר הישראלי לכותרות עיתונים זרים — אחוז מהסיפורים שמכילים את הקול שלנו.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 09</div>
+      <div class="kpi-name">Creator Network Strength</div>
+      <div class="kpi-detail">מספר יוצרים פעילים, חשיפה מצרפית, תפוצה גיאוגרפית — דשבורד פתוח לציבור.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 10</div>
+      <div class="kpi-name">Existing Front Activation</div>
+      <div class="kpi-detail">אחוז הפעילים הקיימים שמשתמשים בשירותי המשרד — יעד: 60% תוך שנה.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 11</div>
+      <div class="kpi-name">Performer Career Resilience</div>
+      <div class="kpi-detail">אחוז שחקנים־שגרירים פעילים שמחזיקים או מגדילים הכנסה למרות קנסלינג — יעד: 80% תוך שנתיים.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 12</div>
+      <div class="kpi-name">Israeli Production Reach</div>
+      <div class="kpi-detail">צפיות בתוכן ישראלי בפלטפורמות OTT גלובליות — יעד: 500 מיליון צפיות שנתיות תוך 3 שנים.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 13</div>
+      <div class="kpi-name">Base + Reach Index</div>
+      <div class="kpi-detail">איזון בין חיזוק הבייס להרחבת המעגל. יעד: גידול שנתי בתמיכת הבייס + 5 נקודות בכל זירת הרחבה.</div>
+    </div>
+
+    <div class="kpi reveal">
+      <div class="kpi-num">KPI 14</div>
+      <div class="kpi-name">Unexpected Voices Reach</div>
+      <div class="kpi-detail">חשיפה מצרפית של קולות לא־צפויים (פעילים מהמרכז־שמאל פרו־ישראלים). יעד: 200 מיליון חשיפות שנתיות תוך שנתיים.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== XIV. STAKES / CLOSING (was XIII) ==================== -->
+<section id="stakes" class="closing">
+  <div class="closing-mark reveal">יד · מה על הכף</div>
+
+  <h2 class="reveal">זו לא מלחמה על "תדמית".<br>זו מלחמה על המסגרת המוסרית שבתוכה ישראל פועלת בעולם.</h2>
+
+  <div class="closing-body reveal">
+    <p>כשמסגרת התודעה קורסת — באים בעקבותיה השווקים, ההסכמים, השותפויות הצבאיות, הסטודנטים, הקהילות, וגם הילדים שלנו בקמפוסים. זו תשתית של היכולת שלנו לפעול. <strong>התקשורת האסטרטגית של ישראל היא מערכת ביטחון לאומית</strong>, וצריכה להיות באותה רמה של רצינות, מקצועיות, סמכות ותקציב כמו צה"ל, מוסד, שב"כ.</p>
+
+    <p>ואת, ציפי — את לא נכנסת לתפקיד חדש. את <strong>נכנסת למלחמה שכבר ניהלת חמש שנים בלונדון</strong>, רק שהפעם יש לך 100 איש בחמ"ל, 3.2 מיליארד ש"ח, 30 קמפוסים, ורשת גלובלית של 50 ערוצי מדיה.</p>
+  </div>
+
+  <div class="three-truths">
+    <div class="three-truth reveal">
+      <span class="three-truth-num">ראשית</span>
+      <p class="three-truth-text">אנחנו צודקים — <strong>וזה לא מספיק</strong>. הצדק שלנו לא מוכר את עצמו. הוא דורש מנגנון.</p>
+    </div>
+    <div class="three-truth reveal">
+      <span class="three-truth-num">שנית</span>
+      <p class="three-truth-text">המנגנון הקיים <strong>מובס</strong>. תיקונים נקודתיים לא יספיקו. נדרש מהפך.</p>
+    </div>
+    <div class="three-truth reveal">
+      <span class="three-truth-num">שלישית</span>
+      <p class="three-truth-text">המהפך <strong>אפשרי</strong>. יש לנו את הסיפור, ה־talent, הטכנולוגיה, הפעילים — וקיבלנו את הלוחמת הנכונה. חסרה החלטה.</p>
+    </div>
+  </div>
+
+  <div class="closing-body reveal" style="margin-top: 80px;">
+    <p>ההזדמנות שלך: לא רק לתקן — <strong>להמציא מחדש</strong>. להפוך את המערך הפחות מאויש בממשלה, לאחד מהגופים שיכריעו את גורל המדינה בעשור הקרוב.</p>
+
+    <p><strong>שלושה צעדים קונקרטיים לחודשים הראשונים:</strong></p>
+
+    <p style="padding-right: 24px; border-right: 2px solid var(--gold-dim); margin-right: 8px;"><strong>שבוע ראשון —</strong> הפעיל הראשון שתפגשי בלי תיאום מוקדם, חבקי אותו. הוא אחד מאלפים שמחזיקים את הקו בלעדיך כבר שנתיים.</p>
+
+    <p style="padding-right: 24px; border-right: 2px solid var(--gold-dim); margin-right: 8px;"><strong>חודש ראשון —</strong> סעי ללוס אנג'לס. פגשי את עשרת השחקנים שאיבדו תפקידים בגלל ישראל. תגידי להם: <em>"אנחנו בונים מעטפת תמיכה אסטרטגית. אתם הכוכבים שלנו, לא שלהם."</em></p>
+
+    <p style="padding-right: 24px; border-right: 2px solid var(--gold-dim); margin-right: 8px;"><strong>חודש שני —</strong> חזרי ל-LSE. בראש משלחת של 30 איש. הצהירי על הקמת מטה ההסברה לקמפוסי עילית — מתוך הקמפוס שפינה אותך. <em>סגירת המעגל.</em></p>
+
+    <p style="margin-top: 50px; font-family: 'Frank Ruhl Libre', serif; font-style: italic; font-size: 1.2rem; color: var(--gold); line-height: 1.5;">"לא הגענו לכאן כדי להתנצל" — את אמרת ב-2015.<br>הזמן הגיע להפוך את המשפט הזה <strong style="font-style: normal;">למבנה</strong>.</p>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <span class="mark">— סוף המסמך —</span>
+  <div>דוקטרינה אסטרטגית · מסמך עמדה אישי לציפי חוטובלי · מאת מרדכי שנוולד · 2026</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
